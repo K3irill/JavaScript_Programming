@@ -1,7 +1,7 @@
 "use strict";
 
 const ARR_THINGS = ["laptop", "book", "lamp", "keyboard", "bottle of water"];
-delete ARR_THINGS[1]; // на месте 'book' будет undefined
+delete ARR_THINGS[1]; //* undefind instead 'book'
 console.log(ARR_THINGS[0] + " and " + ARR_THINGS.at(-1)); //! ARR_THINGS.at(-1) is the same as [ARR_THINGS.length - 1])
 
 let matrix = [
