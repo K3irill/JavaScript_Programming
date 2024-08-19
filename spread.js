@@ -19,7 +19,7 @@ const person = {
 
 const user = {
     ...person,
-    language: ['English', 'Spanish', 'German'],
+    languages: ['English', 'Spanish', 'German'],
     country: 'USA',
 };
 
