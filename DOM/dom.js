@@ -176,4 +176,64 @@ console.log(holaLink.tagName);
 holaLink.hidden = true;
 holaLink.hidden = false;
 
+// client width and height
 
+const mainElement = document.documentElement;
+const mainElementWidth = mainElement.clientWidth;
+const mainElementHeight = mainElement.clientHeight;
+
+console.log(mainElementWidth);
+console.log(mainElementHeight);
+
+let scrollWidth = Math.max(
+  document.body.scrollWidth,
+  document.documentElement.scrollWidth,
+  document.body.offsetWidth,
+  document.documentElement.offsetWidth,
+  document.body.clientWidth,
+  document.documentElement.clientWidth
+);
+
+let scrollHeight = Math.max(
+  document.body.scrollHeight,
+  document.documentElement.scrollHeight,
+  document.body.offsetHeight,
+  document.documentElement.offsetHeight,
+  document.body.clientHeight,
+  document.documentElement.clientHeight
+);
+
+console.log(scrollWidth);
+console.log(scrollHeight);
+
+//* scrollIntoView
+const linkToImportantElement = document.querySelector("#simpleLink");
+
+
+function setScrollIntoView() {
+  const reachingElement = document.querySelector(".imoprtant");
+  return reachingElement.scrollIntoView({
+    block: "start",
+    inline: "nearest",
+    behavior: "smooth",
+  });
+}
+
+
+linkToImportantElement.addEventListener("click", () => setScrollIntoView());
+
+//TODO: scroll lock
+
+const scrollLockBtn = document.querySelector('#btnScroll')
+
+
+function setEnableDisableScroll() {
+  document.body.classList.toggle('scroll-lock')
+  
+  if(scrollLockBtn.textContent !== 'Disable'){
+    scrollLockBtn.textContent = 'Disable'
+    alert(`Scroll is ${scrollLockBtn.textContent}`)
+  }else {scrollLockBtn.textContent = 'Enable'; alert(`Scroll is ${scrollLockBtn.textContent}`)}
+}
+
+scrollLockBtn.addEventListener('click', () => setEnableDisableScroll())
