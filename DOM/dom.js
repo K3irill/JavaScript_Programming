@@ -230,10 +230,10 @@ const scrollLockBtn = document.querySelector('#btnScroll')
 function setEnableDisableScroll() {
   document.body.classList.toggle('scroll-lock')
   
-  if(scrollLockBtn.textContent !== 'Disable'){
-    scrollLockBtn.textContent = 'Disable'
-    alert(`Scroll is ${scrollLockBtn.textContent}`)
-  }else {scrollLockBtn.textContent = 'Enable'; alert(`Scroll is ${scrollLockBtn.textContent}`)}
+  if(scrollLockBtn.textContent !== 'Enable'){
+    scrollLockBtn.textContent = 'Enable'
+    alert(`Scroll is disabled`)
+  }else {scrollLockBtn.textContent = 'Disable'; alert(`Scroll is enabled`)}
 }
 
 scrollLockBtn.addEventListener('click', () => setEnableDisableScroll())
