@@ -31,22 +31,22 @@ const children = bodyElement.children;
 
 console.log(children);
 
-//---Static collection
+//*---Static collection
 const listStatic = document.querySelectorAll(".container_item");
 
-//---Live collection
+//*---Live collection
 const listLive = document.getElementsByClassName("container_item");
 
 console.log(listStatic);
 console.log(listLive);
 
-//---- closest
+//*---- closest
 const elementt = document.querySelector(".container_link");
 const parentList = elementt.closest(".container_item");
 
 console.log(parentList);
 
-//----- innerHTML
+//*----- innerHTML
 const textElement = document.querySelector(".title");
 
 const textElementContent = textElement.innerHTML;
@@ -55,7 +55,7 @@ console.log(textElementContent);
 textElement.innerHTML = `<p>${textElementContent}</p>
  <p><span style='color:yellow; text-shadow: 1px 1px 1px black' >hey</span> what's up</p>`;
 
-//----- textContent
+//*----- textContent
  const textElement2 = document.querySelector(".title");
 
 const textElementContent2 = textElement.textContent;
@@ -63,7 +63,7 @@ console.log(textElementContent2);
 
 textElement.textContent = "hey how's it going on";
 
-// change comment
+//* change comment
 
 const getComment = textElement.nextSibling;
 console.log(getComment);
@@ -71,3 +71,37 @@ console.log(getComment.data);
 
 getComment.data =  "uppss it was сhanged";
 console.log(getComment.data);
+
+//* Create Element
+const listElement = document.querySelector('.lesson__list')
+
+const newElement = document.createElement('p');
+
+newElement.innerHTML= 'Hello everyone! -> before'
+console.log(newElement);
+
+//* Create Text Node
+const newText = document.createTextNode('Hi! -> after')
+console.log(newText);
+
+//* paste created element 
+
+listElement.before(newElement)
+
+listElement.after(newText, '. coooool')
+
+// listElement.prepend(newElement)
+
+// listElement.append(newElement)
+
+//*paste html element
+const listElement2  = document.querySelector('.lesson__list2')
+
+listElement2.insertAdjacentHTML(
+  'afterbegin',
+  '<li>react</li>'
+)
+//beforeend
+//beforebegin
+//afterend
+//afterbegin
