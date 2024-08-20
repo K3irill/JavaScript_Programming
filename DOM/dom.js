@@ -105,3 +105,43 @@ listElement2.insertAdjacentHTML(
 //beforebegin
 //afterend
 //afterbegin
+
+const inputEl = document.querySelector('[disabled]');
+
+listElement2.after(inputEl)
+
+const cloneInputEl = inputEl.cloneNode(true);
+
+listElement2.after(cloneInputEl)
+
+//* remove element
+
+cloneInputEl.remove();
+
+//* ------  className and ClassList
+
+const holaLink = document.querySelector('.hola__link');
+console.log(holaLink);
+
+const holaLinkClassName = holaLink.className;
+console.log(holaLinkClassName);
+
+holaLink.className = 'red';
+
+holaLink.classList.add('active')
+console.log(holaLink);
+
+// holaLink.classList.remove('active')
+
+// holaLink.classList.add('toggle')
+
+// holaLink.classList.contains('contains')
+
+if(holaLink.classList.contains('active')){
+  console.log(`holaLink has class 'active'`);
+  
+}
+for (let className of holaLink.classList){
+  console.log('class name: ' + className );
+  
+}
