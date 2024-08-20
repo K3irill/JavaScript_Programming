@@ -2,6 +2,7 @@
 
 const htmlElement = document.documentElement;
 const bodyElement = document.body;
+
 const headElement = document.head;
 
 console.log(htmlElement);
@@ -209,7 +210,6 @@ console.log(scrollHeight);
 //* scrollIntoView
 const linkToImportantElement = document.querySelector("#simpleLink");
 
-
 function setScrollIntoView() {
   const reachingElement = document.querySelector(".imoprtant");
   return reachingElement.scrollIntoView({
@@ -219,21 +219,79 @@ function setScrollIntoView() {
   });
 }
 
-
 linkToImportantElement.addEventListener("click", () => setScrollIntoView());
 
 //TODO: scroll lock
 
-const scrollLockBtn = document.querySelector('#btnScroll')
-
+const scrollLockBtn = document.querySelector("#btnScroll");
 
 function setEnableDisableScroll() {
-  document.body.classList.toggle('scroll-lock')
-  
-  if(scrollLockBtn.textContent !== 'Enable'){
-    scrollLockBtn.textContent = 'Enable'
-    alert(`Scroll is disabled`)
-  }else {scrollLockBtn.textContent = 'Disable'; alert(`Scroll is enabled`)}
+  document.body.classList.toggle("scroll-lock");
+
+  if (scrollLockBtn.textContent !== "Enable") {
+    scrollLockBtn.textContent = "Enable";
+    alert(`Scroll is disabled`);
+  } else {
+    scrollLockBtn.textContent = "Disable";
+    alert(`Scroll is enabled`);
+  }
 }
 
-scrollLockBtn.addEventListener('click', () => setEnableDisableScroll())
+scrollLockBtn.addEventListener("click", () => setEnableDisableScroll());
+
+//* offsetWidth and offsetHeight
+
+const block = document.querySelector(".block");
+
+const elementOffsetWidth = block.offsetWidth;
+const elementOffsetHeight = block.offsetHeight;
+
+console.log("offsetWidth: " + elementOffsetWidth);
+console.log("offsetHeight: " + elementOffsetHeight);
+
+//* clientTop and clientLeft
+const elementClientTop = block.clientTop;
+const elementClientLeft = block.clientLeft;
+
+console.log("ClientTop: " + elementClientTop);
+console.log("ClientLeft: " + elementClientLeft);
+
+//* clientWidth and clientHeight
+const elementClientWidth = block.clientWidth;
+const elementClientHeight = block.clientHeight;
+
+console.log("ClientWidth: " + elementClientWidth);
+console.log("ClientHeight: " + elementClientHeight);
+
+//* scrollWidth and scrollHeight
+const elementScrollWidth = block.scrollWidth;
+const elementScrollHeight = block.scrollHeight;
+
+console.log("ScrollWidth: " + elementScrollWidth);
+console.log("ScrollHeight: " + elementScrollHeight);
+
+//* scrollTop and scrollLeft
+const elementScrollTop = block.scrollTop;
+const elementScrollLeft = block.scrollLeft;
+
+console.log("ScrollTop: " + elementScrollTop);
+console.log("ScrollLeft: " + elementScrollLeft);
+
+
+
+//* getBoundingClientRect ->  Get item coords
+const item = document.querySelector(".block > h3");
+
+const getItemCoords = item.getBoundingClientRect();
+
+const getItemTopCoord = item.getBoundingClientRect().top;
+const getItemTopDocumentCoord = getItemTopCoord + window.scrollY;
+
+console.log(getItemCoords);
+console.log(getItemTopCoord);
+
+console.log(getItemTopDocumentCoord);
+
+setTimeout(function () {
+  window.scrollTo(0, 100);
+}, 1000);

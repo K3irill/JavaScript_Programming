@@ -1,11 +1,29 @@
-.hola__link_aqua{
-    color: aqua;
+* {
+  box-sizing: border-box;
+}
+.hola__link_aqua {
+  color: aqua;
 }
 
-.red{
-    color: red;
+.red {
+  color: red;
 }
 
-.scroll-lock{
-    overflow: hidden;
+.scroll-lock {
+  overflow: hidden;
+}
+.block__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  overflow: auto;
+  
+  height: 120px;
+  width: 400px;
+  border: 10px solid #ff7b00;
+  text-align: center;
+  margin: 20px;
+  background-color: #ebba35;
 }
