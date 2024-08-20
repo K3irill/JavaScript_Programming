@@ -56,7 +56,7 @@ textElement.innerHTML = `<p>${textElementContent}</p>
  <p><span style='color:yellow; text-shadow: 1px 1px 1px black' >hey</span> what's up</p>`;
 
 //*----- textContent
- const textElement2 = document.querySelector(".title");
+const textElement2 = document.querySelector(".title");
 
 const textElementContent2 = textElement.textContent;
 console.log(textElementContent2);
@@ -69,50 +69,47 @@ const getComment = textElement.nextSibling;
 console.log(getComment);
 console.log(getComment.data);
 
-getComment.data =  "uppss it was сhanged";
+getComment.data = "uppss it was сhanged";
 console.log(getComment.data);
 
 //* Create Element
-const listElement = document.querySelector('.lesson__list')
+const listElement = document.querySelector(".lesson__list");
 
-const newElement = document.createElement('p');
+const newElement = document.createElement("p");
 
-newElement.innerHTML= 'Hello everyone! -> before'
+newElement.innerHTML = "Hello everyone! -> before";
 console.log(newElement);
 
 //* Create Text Node
-const newText = document.createTextNode('Hi! -> after')
+const newText = document.createTextNode("Hi! -> after");
 console.log(newText);
 
-//* paste created element 
+//* paste created element
 
-listElement.before(newElement)
+listElement.before(newElement);
 
-listElement.after(newText, '. coooool')
+listElement.after(newText, ". coooool");
 
 // listElement.prepend(newElement)
 
 // listElement.append(newElement)
 
 //*paste html element
-const listElement2  = document.querySelector('.lesson__list2')
+const listElement2 = document.querySelector(".lesson__list2");
 
-listElement2.insertAdjacentHTML(
-  'afterbegin',
-  '<li>react</li>'
-)
+listElement2.insertAdjacentHTML("afterbegin", "<li>react</li>");
 //beforeend
 //beforebegin
 //afterend
 //afterbegin
 
-const inputEl = document.querySelector('[disabled]');
+const inputEl = document.querySelector("[disabled]");
 
-listElement2.after(inputEl)
+listElement2.after(inputEl);
 
 const cloneInputEl = inputEl.cloneNode(true);
 
-listElement2.after(cloneInputEl)
+listElement2.after(cloneInputEl);
 
 //* remove element
 
@@ -120,15 +117,15 @@ cloneInputEl.remove();
 
 //* ------  className and ClassList
 
-const holaLink = document.querySelector('.hola__link');
+const holaLink = document.querySelector(".hola__link");
 console.log(holaLink);
 
 const holaLinkClassName = holaLink.className;
 console.log(holaLinkClassName);
 
-holaLink.className = 'red';
+holaLink.className = "red";
 
-holaLink.classList.add('active')
+holaLink.classList.add("active");
 console.log(holaLink);
 
 // holaLink.classList.remove('active')
@@ -137,11 +134,46 @@ console.log(holaLink);
 
 // holaLink.classList.contains('contains')
 
-if(holaLink.classList.contains('active')){
+if (holaLink.classList.contains("active")) {
   console.log(`holaLink has class 'active'`);
-  
 }
-for (let className of holaLink.classList){
-  console.log('class name: ' + className );
-  
+for (let className of holaLink.classList) {
+  console.log("class name: " + className);
 }
+
+//* add style
+holaLink.style.color = "brown";
+holaLink.style["font-size"] = "36px";
+// or with camelCase
+holaLink.style.fontSize = "24px";
+//a few styles
+holaLink.style.cssText = `
+
+  text-decoration: none;
+  margin-left: 20px;
+  color: purple;
+  font-weight: bold;
+  text-transform: uppercase;
+
+`;
+
+const holaLinkStyle = getComputedStyle(holaLink);
+console.log(holaLinkStyle.textTransform);
+
+console.log(holaLink.href);
+
+console.dir(holaLink);
+
+console.log(holaLink.hasAttribute("disabled"));
+
+const hrefHolaLink = holaLink.getAttribute("href");
+console.log(hrefHolaLink);
+
+holaLink.setAttribute("title", "linkkkk");
+holaLink.removeAttribute("title");
+
+console.log(holaLink.tagName);
+holaLink.hidden = true;
+holaLink.hidden = false;
+
+
