@@ -345,3 +345,10 @@ function readyload() {
   console.log("Страница загружена!");
   console.log(image.offsetWidth);
 }
+
+window.addEventListener("beforeunload", beforeUnload);
+
+function beforeUnload(event) {
+  event.preventDefault();
+  event.returnValue = '';
+}
