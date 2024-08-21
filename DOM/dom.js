@@ -277,8 +277,6 @@ const elementScrollLeft = block.scrollLeft;
 console.log("ScrollTop: " + elementScrollTop);
 console.log("ScrollLeft: " + elementScrollLeft);
 
-
-
 //* getBoundingClientRect ->  Get item coords
 const item = document.querySelector(".block > h3");
 
@@ -295,3 +293,21 @@ console.log(getItemTopDocumentCoord);
 setTimeout(function () {
   window.scrollTo(0, 100);
 }, 1000);
+
+//* forms
+
+const mainForm = document.forms;
+const mainFormByName = document.forms.main;
+console.log(mainForm);
+console.log(mainFormByName);
+
+console.log(mainFormByName.elements);
+
+const mainFormInput = mainFormByName.nameInput;
+console.log(mainFormInput);
+
+const mainFormRadio = mainFormByName.radio
+console.log(mainFormRadio[0].value);
+console.log(mainFormRadio[1].value);
+console.log(mainFormRadio[0].checked);
+console.log(mainFormRadio[1].checked);
