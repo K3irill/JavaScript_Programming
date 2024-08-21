@@ -16,5 +16,5 @@ btnResultNode.addEventListener("click", function () {
     operation,
   });
 
-  outputNode.innerHTML = `<h2>Ответ: ${result}</h2>`;
+  outputNode.innerHTML = `Output: ${result}`;
 });
