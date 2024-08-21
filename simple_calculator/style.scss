@@ -1,0 +1,86 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+.wrapper{
+	width: 100%;
+	height: 100%;
+	background: url(/simple_calculator/img-tower-in-forest.jpg) center/100% auto no-repeat;
+}
+.main-block__container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	
+}
+.main-block {
+	background: linear-gradient(0deg, rgba(223,23,206,0.5) 17%, rgba(153,30,255,0.5) 53%, rgba(45, 215, 253, 0.5) 100%);;
+	padding: 30px 20px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	border: 1px solid #000;
+	width: 400px;
+		&_input-num {
+			width: 200px;
+			background-color: #bc44ccb0;
+			border-radius: 10px;
+			border:none;
+			box-shadow: 0px 0px 8px  #140c11b9;
+			&::placeholder{
+				color: white;
+				font-weight: 600;
+			}
+		}
+
+		&_select-operator {
+			background-color: #14b0dfde;
+			
+		}
+
+		&_btn-result {
+			margin: 20px;
+			padding: 10px 40px;
+			border-radius: 5px;
+			background-color: #09ffca;
+			border: none;
+			box-shadow: 0px 0px 10px  #000000b0;
+			font-weight: 600;
+		}
+
+		&_output-data {
+			color: white;
+			font-size: 24px;
+			font-weight: 600;
+			
+		}
+
+}
+.js-select-operation, .js-input-a, .js-input-b{
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+}
+.js-input-a {
+	order: 0;
+	
+}
+.js-input-b {
+	order: 2;
+	
+}
+.js-select-operation {
+	order: 1;
+	margin: 20px;
+	
+}
+.js-btn-result {
+	order: 3;
+	
+}
+.js-output {
+	order: 4;
+}
