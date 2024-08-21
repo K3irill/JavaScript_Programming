@@ -5,6 +5,7 @@ const OPERATIONS = {
   sub: "-",
   multiply: "*",
   divide: "/",
+  exponentiation: '**'
 };
 
 function calculator({ a, b, operation }) {
@@ -22,6 +23,9 @@ function calculator({ a, b, operation }) {
       break;
     case OPERATIONS.divide:
       result = divide(a, b);
+      break;
+    case OPERATIONS.exponentiation:
+      result = exponentiation(a, b);
       break;
     default:
       break;
