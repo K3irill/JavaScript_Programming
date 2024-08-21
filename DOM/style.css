@@ -27,3 +27,8 @@
   margin: 20px;
   background-color: #ebba35;
 }
+
+.bgc-black{
+  background-color: black;
+  color: white;
+}

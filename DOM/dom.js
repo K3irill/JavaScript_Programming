@@ -306,8 +306,42 @@ console.log(mainFormByName.elements);
 const mainFormInput = mainFormByName.nameInput;
 console.log(mainFormInput);
 
-const mainFormRadio = mainFormByName.radio
+const mainFormRadio = mainFormByName.radio;
 console.log(mainFormRadio[0].value);
 console.log(mainFormRadio[1].value);
 console.log(mainFormRadio[0].checked);
 console.log(mainFormRadio[1].checked);
+
+//---
+const buttonChikEl = document.querySelector("#btnchik");
+
+function changeBackgraondColor(params) {
+  if (buttonChikEl.classList.contains("bgc-black")) {
+    buttonChikEl.classList.remove("bgc-black");
+  } else buttonChikEl.classList.add("bgc-black");
+}
+
+buttonChikEl.addEventListener("click", changeBackgraondColor);
+
+setTimeout(
+  () => buttonChikEl.removeEventListener("click", changeBackgraondColor),
+  10000
+);
+
+document.addEventListener("DOMContentLoaded", readyDom);
+
+window.addEventListener("load", readyload);
+
+function readyDom() {
+  const image = document.querySelector(".image");
+  console.log(document.readyState);
+  console.log("DOM загружен!");
+  console.log(image.offsetWidth);
+}
+
+function readyload() {
+  console.log(document.readyState);
+  const image = document.querySelector(".image");
+  console.log("Страница загружена!");
+  console.log(image.offsetWidth);
+}
