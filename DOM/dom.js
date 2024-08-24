@@ -165,6 +165,7 @@ console.log(holaLink.href);
 
 console.dir(holaLink);
 
+// ATRIBUTE
 console.log(holaLink.hasAttribute("disabled"));
 
 const hrefHolaLink = holaLink.getAttribute("href");
