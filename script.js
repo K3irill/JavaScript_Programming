@@ -75,3 +75,30 @@ function getInfo(persons) {
   return newObj;
 }
 console.log(getInfo(obj));
+
+const SOMEARR  = [['key1', 'value1'], ['key2', 'value2']]
+
+function objFromArr(arr) {
+  const obj = {};
+  arr.forEach(el =>{
+    obj[el[0]] = el[1]
+  })
+  return obj
+}
+
+console.log(objFromArr(SOMEARR));
+let someStr = 'communication'
+
+
+function countChars(str){
+  let countObj = {}
+  str.split('').forEach(el =>{
+    const lowerEl = el.toLowerCase()
+    if(countObj[lowerEl] === undefined){
+      countObj[lowerEl] = 1
+    }else ++countObj[lowerEl]
+  })
+return countObj
+}
+console.log(countChars(someStr));
+
