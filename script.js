@@ -76,29 +76,57 @@ function getInfo(persons) {
 }
 console.log(getInfo(obj));
 
-const SOMEARR  = [['key1', 'value1'], ['key2', 'value2']]
+const SOMEARR = [
+  ["key1", "value1"],
+  ["key2", "value2"],
+];
 
 function objFromArr(arr) {
   const obj = {};
-  arr.forEach(el =>{
-    obj[el[0]] = el[1]
-  })
-  return obj
+  arr.forEach((el) => {
+    obj[el[0]] = el[1];
+  });
+  return obj;
 }
 
 console.log(objFromArr(SOMEARR));
-let someStr = 'communication'
+let someStr = "communication";
 
-
-function countChars(str){
-  let countObj = {}
-  str.split('').forEach(el =>{
-    const lowerEl = el.toLowerCase()
-    if(countObj[lowerEl] === undefined){
-      countObj[lowerEl] = 1
-    }else ++countObj[lowerEl]
-  })
-return countObj
+function countChars(str) {
+  let countObj = {};
+  str.split("").forEach((el) => {
+    const lowerEl = el.toLowerCase();
+    if (countObj[lowerEl] === undefined) {
+      countObj[lowerEl] = 1;
+    } else ++countObj[lowerEl];
+  });
+  return countObj;
 }
 console.log(countChars(someStr));
 
+let num = 1;
+const sayHello = (name) => {
+  let num = 0;
+
+  return function () {
+    num++;
+    if (num < 4) {
+      return console.log(`Hello, ${name}`);
+    }
+  };
+};
+const el = sayHello("Andrew");
+el();
+el();
+el();
+el();
+el();
+el();
+
+for (var i = 0; i <= 10; i++) {
+  (function (i) {
+    setTimeout(function () {
+      console.log(i);
+    }, 0);
+  })(i);
+}
