@@ -130,3 +130,12 @@ for (var i = 0; i <= 10; i++) {
     }, 0);
   })(i);
 }
+
+//palindrom
+
+function palindrom(word) {
+  word = word.toLowerCase();
+  return word === word.split('').reverse().join('')
+  
+}
+console.log(palindrom('aazZaa'))
