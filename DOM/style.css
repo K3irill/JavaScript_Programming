@@ -1,34 +1,34 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 .hola__link_aqua {
-  color: aqua;
+    color: aqua;
 }
 
 .red {
-  color: red;
+    color: red;
 }
 
 .scroll-lock {
-  overflow: hidden;
+    overflow: hidden;
 }
 .block__wrapper {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .block {
-  overflow: auto;
-  
-  height: 120px;
-  width: 400px;
-  border: 10px solid #ff7b00;
-  text-align: center;
-  margin: 20px;
-  background-color: #ebba35;
+    overflow: auto;
+
+    height: 120px;
+    width: 400px;
+    border: 10px solid #ff7b00;
+    text-align: center;
+    margin: 20px;
+    background-color: #ebba35;
 }
 
-.bgc-black{
-  background-color: black;
-  color: white;
+.bgc-black {
+    background-color: black;
+    color: white;
 }

@@ -25,7 +25,7 @@ console.log(childNodes);
 console.log(bodyElement.hasChildNodes);
 
 for (let node of childNodes) {
-  console.log(node);
+    console.log(node);
 }
 
 const children = bodyElement.children;
@@ -136,10 +136,10 @@ console.log(holaLink);
 // holaLink.classList.contains('contains')
 
 if (holaLink.classList.contains("active")) {
-  console.log(`holaLink has class 'active'`);
+    console.log(`holaLink has class 'active'`);
 }
 for (let className of holaLink.classList) {
-  console.log("class name: " + className);
+    console.log("class name: " + className);
 }
 
 //* add style
@@ -188,21 +188,21 @@ console.log(mainElementWidth);
 console.log(mainElementHeight);
 
 let scrollWidth = Math.max(
-  document.body.scrollWidth,
-  document.documentElement.scrollWidth,
-  document.body.offsetWidth,
-  document.documentElement.offsetWidth,
-  document.body.clientWidth,
-  document.documentElement.clientWidth
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.body.clientWidth,
+    document.documentElement.clientWidth
 );
 
 let scrollHeight = Math.max(
-  document.body.scrollHeight,
-  document.documentElement.scrollHeight,
-  document.body.offsetHeight,
-  document.documentElement.offsetHeight,
-  document.body.clientHeight,
-  document.documentElement.clientHeight
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
 );
 
 console.log(scrollWidth);
@@ -212,12 +212,12 @@ console.log(scrollHeight);
 const linkToImportantElement = document.querySelector("#simpleLink");
 
 function setScrollIntoView() {
-  const reachingElement = document.querySelector(".imoprtant");
-  return reachingElement.scrollIntoView({
-    block: "start",
-    inline: "nearest",
-    behavior: "smooth",
-  });
+    const reachingElement = document.querySelector(".imoprtant");
+    return reachingElement.scrollIntoView({
+        block: "start",
+        inline: "nearest",
+        behavior: "smooth",
+    });
 }
 
 linkToImportantElement.addEventListener("click", () => setScrollIntoView());
@@ -227,15 +227,15 @@ linkToImportantElement.addEventListener("click", () => setScrollIntoView());
 const scrollLockBtn = document.querySelector("#btnScroll");
 
 function setEnableDisableScroll() {
-  document.body.classList.toggle("scroll-lock");
+    document.body.classList.toggle("scroll-lock");
 
-  if (scrollLockBtn.textContent !== "Enable") {
-    scrollLockBtn.textContent = "Enable";
-    alert(`Scroll is disabled`);
-  } else {
-    scrollLockBtn.textContent = "Disable";
-    alert(`Scroll is enabled`);
-  }
+    if (scrollLockBtn.textContent !== "Enable") {
+        scrollLockBtn.textContent = "Enable";
+        alert(`Scroll is disabled`);
+    } else {
+        scrollLockBtn.textContent = "Disable";
+        alert(`Scroll is enabled`);
+    }
 }
 
 scrollLockBtn.addEventListener("click", () => setEnableDisableScroll());
@@ -292,7 +292,7 @@ console.log(getItemTopCoord);
 console.log(getItemTopDocumentCoord);
 
 setTimeout(function () {
-  window.scrollTo(0, 100);
+    window.scrollTo(0, 100);
 }, 1000);
 
 //* forms
@@ -317,16 +317,16 @@ console.log(mainFormRadio[1].checked);
 const buttonChikEl = document.querySelector("#btnchik");
 
 function changeBackgraondColor(params) {
-  if (buttonChikEl.classList.contains("bgc-black")) {
-    buttonChikEl.classList.remove("bgc-black");
-  } else buttonChikEl.classList.add("bgc-black");
+    if (buttonChikEl.classList.contains("bgc-black")) {
+        buttonChikEl.classList.remove("bgc-black");
+    } else buttonChikEl.classList.add("bgc-black");
 }
 
 buttonChikEl.addEventListener("click", changeBackgraondColor);
 
 setTimeout(
-  () => buttonChikEl.removeEventListener("click", changeBackgraondColor),
-  10000
+    () => buttonChikEl.removeEventListener("click", changeBackgraondColor),
+    10000
 );
 
 document.addEventListener("DOMContentLoaded", readyDom);
@@ -334,22 +334,22 @@ document.addEventListener("DOMContentLoaded", readyDom);
 window.addEventListener("load", readyload);
 
 function readyDom() {
-  const image = document.querySelector(".image");
-  console.log(document.readyState);
-  console.log("DOM загружен!");
-  console.log(image.offsetWidth);
+    const image = document.querySelector(".image");
+    console.log(document.readyState);
+    console.log("DOM загружен!");
+    console.log(image.offsetWidth);
 }
 
 function readyload() {
-  console.log(document.readyState);
-  const image = document.querySelector(".image");
-  console.log("Страница загружена!");
-  console.log(image.offsetWidth);
+    console.log(document.readyState);
+    const image = document.querySelector(".image");
+    console.log("Страница загружена!");
+    console.log(image.offsetWidth);
 }
 
 window.addEventListener("beforeunload", beforeUnload);
 
 function beforeUnload(event) {
-  event.preventDefault();
-  event.returnValue = '';
+    event.preventDefault();
+    event.returnValue = "";
 }

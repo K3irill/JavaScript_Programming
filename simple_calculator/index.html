@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>calculator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="main-block__container __container">
-        <div class="main-block">
-          <input
-            placeholder="Enter some number"
-            class="main-block_input-num js-input-a"
-            type="number"
-          />
-          <input
-            placeholder="and here too "
-            class="main-block_input-num js-input-b"
-            type="number"
-          />
-          <select
-            class="main-block_select-operator js-select-operation"
-            name=""
-            id=""
-          >
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-            <option value="**">**</option>
-          </select>
-          <button class="main-block_btn-result js-btn-result">Result</button>
-          <p class="main-block_output-data js-output">Output: </p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>calculator</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="main-block__container __container">
+                <div class="main-block">
+                    <input
+                        placeholder="Enter some number"
+                        class="main-block_input-num js-input-a"
+                        type="number"
+                    />
+                    <input
+                        placeholder="and here too "
+                        class="main-block_input-num js-input-b"
+                        type="number"
+                    />
+                    <select
+                        class="main-block_select-operator js-select-operation"
+                        name=""
+                        id=""
+                    >
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                        <option value="**">**</option>
+                    </select>
+                    <button class="main-block_btn-result js-btn-result">
+                        Result
+                    </button>
+                    <p class="main-block_output-data js-output">Output:</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- js-scripts -->
-    <script src="math.js"></script>
-    <script src="calculator.js"></script>
-    <script src="index.js"></script>
-  </body>
+        <!-- js-scripts -->
+        <script src="math.js"></script>
+        <script src="calculator.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>

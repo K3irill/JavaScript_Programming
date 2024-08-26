@@ -3,27 +3,27 @@ const condition = 2;
 //*Выполнить один, либо другой блок кода, в зависимости от условия:
 
 if (condition) {
-  console.log("Выполнится, если условие истинное (true)");
+    console.log("Выполнится, если условие истинное (true)");
 } else {
-  console.log("Выполнится, если условие ложное (false)");
+    console.log("Выполнится, если условие ложное (false)");
 }
 
 //*Выполнить блок кода, если условие истинное, либо пропустить его:
 
 if (condition) {
-  console.log("Выполнится, если условие истинное");
+    console.log("Выполнится, если условие истинное");
 }
 
 //*Выполнить блок кода, у которого условие истинное и находится выше всего в списке, остальные проверки проигнорировать:
 
 if (condition > 2) {
-  // ...
+    // ...
 } else if (condition !== 2) {
-  // ...
+    // ...
 } else if (condition % 2 === 0) {
-  // ...
+    // ...
 } else {
-  // Выполнится, если все условия выше ложные
+    // Выполнится, если все условия выше ложные
 }
 
 /*
@@ -49,10 +49,11 @@ console.log(value);
 
 day === "Вторник" && processTuesday();
 
-const value2 = externalValue ?? 42// ?? - это оператор нулевого слияния
+const value2 = externalValue ?? 42; // ?? - это оператор нулевого слияния
 console.log(value2);
 
-//! без использования ?? 
-const value3 = (externalValue !== null && externalValue !== undefined) ? externalValue : 42
+//! без использования ??
+const value3 =
+    externalValue !== null && externalValue !== undefined ? externalValue : 42;
 
 console.log(value3);

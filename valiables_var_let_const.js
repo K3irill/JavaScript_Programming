@@ -51,8 +51,7 @@ console.log(`ghost = ${ghost}`);
 */
 
 let loop = null;
-const  ARRAY = [];
-
+const ARRAY = [];
 
 /*
 *К переменным, объявленным при помощи ключевого слова var, можно обращаться до момента объявления без ошибки.
@@ -62,44 +61,44 @@ const  ARRAY = [];
 
 console.log(`Вызыв до объявления itsVar = ${itsVar}`);
 
-var itsVar = 'yeahhh, i\'m var';
+var itsVar = "yeahhh, i'm var";
 
 console.log(`Вызыв после объявления itsVar = ${itsVar}`);
 
-var a = 5
+var a = 5;
 
-//! Переменные, объявленные через var, имеют функциональную область видимости. 
+//! Переменные, объявленные через var, имеют функциональную область видимости.
 
 function foo() {
-  console.log(a)
-  // undefined
+    console.log(a);
+    // undefined
 
-  var a = 10
-  console.log(a)
-  // 10
+    var a = 10;
+    console.log(a);
+    // 10
 }
 
-foo()
+foo();
 
-console.log(a)
+console.log(a);
 // 5
 
 //* Значение, хранящееся в переменной var, можно изменить двумя способами:
 
 //?----->   Oбратиться к имени переменной и присвоить новое значение:
-var a = 5
-console.log(a)
+var a = 5;
+console.log(a);
 // 5
 
-a = 10
-console.log(a)
+a = 10;
+console.log(a);
 // 10
 //?----->   обратиться к имени переменной вместе с ключевым словом var:
 
-var a = 5
-console.log(a)
+var a = 5;
+console.log(a);
 // 5
 
-var a = 10
-console.log(a)
+var a = 10;
+console.log(a);
 // 10

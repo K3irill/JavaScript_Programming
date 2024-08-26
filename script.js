@@ -1,12 +1,12 @@
 "use strict";
 
 function reverseAndNegate(arr) {
-  let result = [];
-  for (let i = 0; i < arr.length; i++) {
-    result.push(arr[i] * -1);
-  }
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        result.push(arr[i] * -1);
+    }
 
-  return result.reverse();
+    return result.reverse();
 }
 console.log(reverseAndNegate([1, -2, 5, 4]));
 
@@ -30,90 +30,90 @@ console.log(reverseAndNegate([1, -2, 5, 4]));
 //   return result;
 // }
 function calculate(arr) {
-  let newArr = arr
-    .map((el) => (el % 2 == 0 ? el + 4 : el - 2))
-    .filter((el) => el % 13 !== 0)
-    .reduce((a, b) => a + b);
-  return newArr;
+    let newArr = arr
+        .map((el) => (el % 2 == 0 ? el + 4 : el - 2))
+        .filter((el) => el % 13 !== 0)
+        .reduce((a, b) => a + b);
+    return newArr;
 }
 console.log(calculate([15, 2, 3, 5, 6]));
 
 function transfromUpvotes(arr) {
-  let result = [];
+    let result = [];
 
-  arr.map((el) => {
-    if (!el.includes("k")) {
-      result.push(parseFloat(el));
-    } else result.push(parseFloat(el) * 1000);
-  });
-  return result;
+    arr.map((el) => {
+        if (!el.includes("k")) {
+            result.push(parseFloat(el));
+        } else result.push(parseFloat(el) * 1000);
+    });
+    return result;
 }
 console.log(transfromUpvotes(["10k", "2.3k", "5k", "32", "28.4k"]));
 const obj = [
-  {
-    name: "Petia",
-    age: 18,
-  },
-  {
-    name: "Pasha",
-    age: 22,
-  },
-  {
-    name: "Alex",
-    age: 15,
-  },
+    {
+        name: "Petia",
+        age: 18,
+    },
+    {
+        name: "Pasha",
+        age: 22,
+    },
+    {
+        name: "Alex",
+        age: 15,
+    },
 ];
 
 function getInfo(persons) {
-  let averageAge = 0;
-  persons.map((el) => (averageAge += el.age / persons.length));
-  let newArr = persons.reduce((max, obj) => (obj.age > max.age ? obj : max));
-  let oldestHuman = newArr.name;
-  let newObj = new Object();
-  newObj.oldestHuman = oldestHuman;
-  newObj.averageAge = Math.floor(averageAge);
-  return newObj;
+    let averageAge = 0;
+    persons.map((el) => (averageAge += el.age / persons.length));
+    let newArr = persons.reduce((max, obj) => (obj.age > max.age ? obj : max));
+    let oldestHuman = newArr.name;
+    let newObj = new Object();
+    newObj.oldestHuman = oldestHuman;
+    newObj.averageAge = Math.floor(averageAge);
+    return newObj;
 }
 console.log(getInfo(obj));
 
 const SOMEARR = [
-  ["key1", "value1"],
-  ["key2", "value2"],
+    ["key1", "value1"],
+    ["key2", "value2"],
 ];
 
 function objFromArr(arr) {
-  const obj = {};
-  arr.forEach((el) => {
-    obj[el[0]] = el[1];
-  });
-  return obj;
+    const obj = {};
+    arr.forEach((el) => {
+        obj[el[0]] = el[1];
+    });
+    return obj;
 }
 
 console.log(objFromArr(SOMEARR));
 let someStr = "communication";
 
 function countChars(str) {
-  let countObj = {};
-  str.split("").forEach((el) => {
-    const lowerEl = el.toLowerCase();
-    if (countObj[lowerEl] === undefined) {
-      countObj[lowerEl] = 1;
-    } else ++countObj[lowerEl];
-  });
-  return countObj;
+    let countObj = {};
+    str.split("").forEach((el) => {
+        const lowerEl = el.toLowerCase();
+        if (countObj[lowerEl] === undefined) {
+            countObj[lowerEl] = 1;
+        } else ++countObj[lowerEl];
+    });
+    return countObj;
 }
 console.log(countChars(someStr));
 
 let num = 1;
 const sayHello = (name) => {
-  let num = 0;
+    let num = 0;
 
-  return function () {
-    num++;
-    if (num < 4) {
-      return console.log(`Hello, ${name}`);
-    }
-  };
+    return function () {
+        num++;
+        if (num < 4) {
+            return console.log(`Hello, ${name}`);
+        }
+    };
 };
 const el = sayHello("Andrew");
 el();
@@ -124,18 +124,17 @@ el();
 el();
 
 for (var i = 0; i <= 10; i++) {
-  (function (i) {
-    setTimeout(function () {
-      console.log(i);
-    }, 0);
-  })(i);
+    (function (i) {
+        setTimeout(function () {
+            console.log(i);
+        }, 0);
+    })(i);
 }
 
 //palindrom
 
 function palindrom(word) {
-  word = word.toLowerCase();
-  return word === word.split('').reverse().join('')
-  
+    word = word.toLowerCase();
+    return word === word.split("").reverse().join("");
 }
-console.log(palindrom('aazZaa'))
+console.log(palindrom("aazZaa"));
