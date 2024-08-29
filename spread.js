@@ -24,3 +24,46 @@ const user = {
 };
 
 console.log(user);
+
+//ES5
+const num1 = [1, 2, 3, 4];
+const num2 = [2, 3, 4, 5];
+Array.prototype.push.apply(num1, num2);
+console.log(num1);
+//ES6
+const num3 = [1, 2, 3, 4];
+const num4 = [2, 3, 4, 5];
+let res = [...num3, ...num4];
+console.log(res);
+//
+
+const A = {
+    a: "default",
+    b: "just_test",
+};
+const B = {
+    a: "value_fron_b",
+};
+//ES5
+let C = Object.assign(A, B)
+console.log(C);
+//ES6
+let D = {
+    ...A,
+    ...B
+}
+console.log(D);
+//
+
+const arr = [1,2,3]
+function sum(a,b,c) {
+    return a+b+c
+}
+//ES5
+
+sum(arr[0], arr[1], arr[2])
+//or
+sum.apply(null, arr)
+
+//ES6
+console.log(sum(...arr))
