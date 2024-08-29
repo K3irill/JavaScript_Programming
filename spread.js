@@ -67,3 +67,11 @@ sum.apply(null, arr)
 
 //ES6
 console.log(sum(...arr))
+
+//REST
+
+function res1(arg, ...REST) {
+    console.log(arg, REST);
+    
+}
+res1(1,2,3,4,5,6,7,8,9)
