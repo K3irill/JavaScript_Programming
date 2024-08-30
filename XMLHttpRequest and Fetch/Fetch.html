@@ -65,12 +65,25 @@
             function updateDisplay(verse) {
                 verse = verse.replace(" ", "");
                 verse = verse.toLowerCase();
-                let url = verse + ".txt";
-                fetch(url).then(function (response) {
-                    response.text().then(function (text) {
+                let url = verse + ".txgit t";
+
+                fetch(url)
+                    .then(function (response) {
+                        return response.text();
+                    })
+                    .then(function (text) {
                         poemDisplay.textContent = text;
+                    })
+                    .catch((error) => {
+                        console.error("Error fetching the verse:", error);
+                        poemDisplay.textContent = "Error loading verse.";
                     });
-                });
+
+                // fetch(url).then(function (response) {
+                //     response.text().then(function (text) {
+                //         poemDisplay.textContent = text;
+                //     });
+                // });
             }
 
             updateDisplay("Verse 1");
