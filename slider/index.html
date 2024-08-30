@@ -6,20 +6,61 @@
         <title>Slider</title>
     </head>
     <style>
-
-
-
-
+        body{
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            
+        }
+        .slider{
+            margin-top:25vh;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            width: 400px;
+            border: 2px solid rgba(127, 255, 212, 0.575);
+            border-radius: 13px;
+            box-shadow: 0px 0px 10px black;
+        }
+        .slider__img-container{
+            width: 400px;
+            height: 200px;
+        }
+        #slider_btn{
+            background-color: rgba(127, 255, 212, 0.575);
+            border: none;
+        }
+        .blur{
+            filter: blur(6px);
+        }
+        #slider_btn:first-child{
+            border-radius: 10px 0px 0px 10px;
+        }
+        #slider_btn:last-child{
+            border-radius: 0px 10px 10px 0px;
+        }
+        #random-btn{
+            position: absolute;
+            right: 0;
+            margin-right: 20px;
+            background-color: rgba(90, 141, 236, 0.993);
+            border: none;
+            font-size: 8px;
+        }
     </style>
     <body>
         <div class="slider">
-            <button class="slider_btn"><</button>
-            <div class="slider__img-wraper">
+            <button id="slider_btn" class="slider_btn"><</button>
+            <div class="slider__img-container">
                 
             </div>
-            <button class="slider_btn">></button>
+            <button id="slider_btn" class="slider_btn">></button>
         </div>
-
+        <button id="random-btn">secret</button>
         <script src="slider.js"></script>
     </body>
 </html>
