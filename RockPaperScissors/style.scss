@@ -5,14 +5,41 @@ body {
 }
 .game {
     &__result-title{
-        margin-bottom: 120px;
+        
         font-size: 26px;
         text-transform: uppercase;
         text-shadow: 0px 0px 20px black;
         font-weight: 900;
     }
+    &__result-text{
+        width: 50px;
+        position: absolute;
+        top: 45px;
+        box-shadow: inset 1px 1px 1px black;
+        color: #552d2c;
+        font-weight: 600;
+        width: 100px;
+        border-radius: 5px;
+        padding: 0px 5px;
+        background-color: #dbb921;
+    }
     &__count-title{
 
+    }
+    &__result-text-1{
+        left: 0;
+    }
+    &__result-text-2{
+        right:  0;
+    }
+    &__text-wrap{
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+        width: 300px;
     }
     &__wrapper {
         height: 100%;
