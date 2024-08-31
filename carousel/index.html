@@ -4,56 +4,123 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Carousel</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <link rel="stylesheet" href="style.css">
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="container">
+        <div class="container swiper">
             <div class="card-wrapper">
-                <ul class="card-list">
-                    <li class="card-item">
+                <ul class="card-list swiper-wrapper">
+                    <li class="card-item swiper-slide">
                         <a href="#" class="card-link">
                             <img
                                 src="assets/pussy.jpg"
                                 alt=""
                                 class="card-img"
                             />
-                            <p class="badge">Developer</p>
+                            <p class="badge puss">puss</p>
                             <h2 class="card-title">
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit.
                             </h2>
+                            <button
+                                class="card-button material-symbols-rounded"
+                            >
+                                arrow_forward
+                            </button>
                         </a>
                     </li>
-                    <li class="card-item">
+                    <li class="card-item swiper-slide">
                         <a href="#" class="card-link">
                             <img
                                 src="assets/soul.jpg"
                                 alt=""
                                 class="card-img"
                             />
+                            <p class="badge soul">soul</p>
+                            <h2 class="card-title">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit.
+                            </h2>
+                            <button
+                                class="card-button material-symbols-rounded"
+                            >
+                                arrow_forward
+                            </button>
                         </a>
                     </li>
-                    <li class="card-item">
+                    <li class="card-item swiper-slide">
                         <a href="#" class="card-link">
                             <img
                                 src="assets/spider-man-verse.jpg"
                                 alt=""
                                 class="card-img"
                             />
+                            <p class="badge spider-man">spider-man-verse</p>
+                            <h2 class="card-title">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit.
+                            </h2>
+                            <button
+                                class="card-button material-symbols-rounded"
+                            >
+                                arrow_forward
+                            </button>
                         </a>
                     </li>
-                    <li class="card-item">
+                    <li class="card-item swiper-slide">
                         <a href="#" class="card-link">
                             <img
                                 src="assets/zootopia.jpg"
                                 alt=""
                                 class="card-img"
                             />
+                            <p class="badge zootopia">zootopia</p>
+                            <h2 class="card-title">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit.
+                            </h2>
+                            <button
+                                class="card-button material-symbols-rounded"
+                            >
+                                arrow_forward
+                            </button>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img
+                                src="https://i.pinimg.com/736x/c9/bf/5b/c9bf5b5a7e027eb7f35d5cd8a087890e.jpg"
+                                alt=""
+                                class="card-img"
+                            />
+                            <p class="badge Stitch">Stitch</p>
+                            <h2 class="card-title">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit.
+                            </h2>
+                            <button
+                                class="card-button material-symbols-rounded"
+                            >
+                                arrow_forward
+                            </button>
                         </a>
                     </li>
                 </ul>
+
+                <div class="swiper-slide-button swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
