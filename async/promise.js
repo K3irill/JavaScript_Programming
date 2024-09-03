@@ -98,3 +98,18 @@ fetch("https://jsonplaceholder.typicode.com/posts/")
     .then((res) => res.json())
     .then((data) => console.log(data))
     .catch((error) => console.log(error));
+
+const load = async () => {
+    const a = await Promise.resolve(5);
+    const b = await Promise.resolve(10);
+    console.log(a + b);
+};
+
+load();
+
+const load2 = () => {
+    Promise.resolve(5).then((a) => {
+        Promise.resolve(10).then((b) => console.log(a + b));
+    });
+};
+load2()
