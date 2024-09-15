@@ -199,6 +199,57 @@
 //         return "F";
 //     }
 // }
-// console.log(gradeClassifier(95)); 
-// console.log(gradeClassifier(32)); 
+// console.log(gradeClassifier(95));
+// console.log(gradeClassifier(32));
+
+//The nullish coalescing operator (??)
+
+//1
+// function getDefaultName(userName) {
+//     return userName ?? "Guest";
+// }
+
+// console.log(getDefaultName("Alice"));
+// console.log(getDefaultName(undefined));
+// console.log(getDefaultName(null));
+
+//2
+
+// function getNumber(num){
+//     return num ?? 0
+// }
+// console.log(getNumber(42));
+// console.log(getNumber(undefined));
+// console.log(getNumber(null));
+
+//3
+
+// const userSettings = {
+//     theme: "dark",
+// };
+
+// function getUserSettings(obj) {
+//     return obj.theme ?? "light";
+// }
+// console.log(getUserSettings(userSettings));
+// console.log(getUserSettings({})); 
+// console.log(getUserSettings({ theme: null })); 
+
+//4
+
+// function getElement(arr, index){
+//     return arr[index] ?? "No element"
+// }
+// console.log(getElement([1, 2, 3], 1));
+// console.log(getElement([1, 2, 3], 5)); 
+// console.log(getElement([], 0)); 
+
+//5 
+
+// function getScore(score){
+//     return score ?? "No score"
+// }
+// console.log(getScore(95));
+// console.log(getScore(undefined));
+// console.log(getScore(null));
 
