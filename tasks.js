@@ -232,8 +232,8 @@
 //     return obj.theme ?? "light";
 // }
 // console.log(getUserSettings(userSettings));
-// console.log(getUserSettings({})); 
-// console.log(getUserSettings({ theme: null })); 
+// console.log(getUserSettings({}));
+// console.log(getUserSettings({ theme: null }));
 
 //4
 
@@ -241,10 +241,10 @@
 //     return arr[index] ?? "No element"
 // }
 // console.log(getElement([1, 2, 3], 1));
-// console.log(getElement([1, 2, 3], 5)); 
-// console.log(getElement([], 0)); 
+// console.log(getElement([1, 2, 3], 5));
+// console.log(getElement([], 0));
 
-//5 
+//5
 
 // function getScore(score){
 //     return score ?? "No score"
@@ -253,3 +253,169 @@
 // console.log(getScore(undefined));
 // console.log(getScore(null));
 
+//objects
+
+//1
+
+// const person = {
+//     name: "Kail",
+//     age: 20,
+//     greet() {
+//         console.log(this.name);
+//     },
+// };
+// person.greet();
+
+//2
+
+// const car = { make: "Toyota", model: "Corolla" };
+
+// function getProperty(obj, prop) {
+//     return obj[prop] ?? "Property not found";
+// }
+// console.log(getProperty(car, "make"));
+// console.log(getProperty(car, "year"));
+
+//3
+
+// const calculator = {
+//     add(a, b) {
+//         return a + b;
+//     },
+//     subtract(a, b) {
+//         return a - b;
+//     },
+// };
+
+// console.log(calculator.add(5, 3));
+// console.log(calculator.subtract(10, 4));
+
+//4
+
+// function cloneObject(obj) {
+//     return Object.assign(obj);
+//     //or { ...obj }
+// }
+
+// const original = { name: "Alice", age: 25 };
+// const copy = cloneObject(original);
+// console.log(copy);
+
+//5
+
+// const person = {
+//     name: "Kail",
+//     age: 20,
+//     greet() {
+//         console.log(this.name);
+//     },
+// };
+
+// function countProperties(obj) {
+//     return Object.keys(obj).length;
+//     //or
+//     let count = 0;
+//     for (let key in obj) {
+//         count++;
+//     }
+//     return count;
+// }
+// console.log(countProperties(person));
+
+//* deep clone
+// const _ = require("lodash");
+
+// let userExample = {
+//     name: "John",
+//     sizes: {
+//         height: 182,
+//         width: {
+//             maxWidth: "800px",
+//             minWidth: "400px",
+//         },
+//     },
+// };
+
+// let cloneUser = {};
+
+// //not deep
+// for (let key in userExample) {
+//     cloneUser[key] = userExample[key];
+// }
+
+// let cloneUser2 = {};
+
+// cloneUser2 = _.cloneDeep(userExample);
+// cloneUser2.name = "Kail";
+
+// let cloneUser3 = {};
+
+// cloneUser3 = structuredClone(userExample);
+
+// cloneUser3.name = "Taller";
+
+// console.log(cloneUser);
+// console.log(cloneUser2);
+// console.log(cloneUser3);
+//*
+
+//6
+
+// function deleteProperty(obj, prop) {
+//     delete obj[prop];
+//     return obj;
+// }
+// deleteProperty(cloneUser3, "name");
+// console.log(cloneUser3);
+
+//7
+const numsObj = {
+    one: 100,
+    two: 200,
+    title: null,
+};
+
+// function increaseValues(obj) {
+//     for (let key in obj) {
+//         if (typeof obj[key] === "number") {
+//             obj[key] += 1;
+//         }
+//     }
+
+//     return obj;
+// }
+// console.log(increaseValues(numsObj));
+
+//8
+
+// function hasProperty(obj, prop) {
+//     return prop in obj;
+//     //or
+//     return obj.hasOwnProperty(prop);
+// }
+
+// console.log(hasProperty(numsObj, "three"));
+
+//9
+
+function mergeObjects(obj1, obj2) {
+    return { ...obj1, ...obj2 };
+}
+
+const obj1 = { a: 2, b: 2 };
+const obj2 = { b: 3, c: 4 };
+console.log(mergeObjects(obj1, obj2));
+
+//10
+
+function findValue(obj, value) {
+    let result = [];
+    for (let key in obj) {
+        if (obj[key] === value) {
+            result.push(key);
+        }
+    }
+
+    return result.length ? result : "Value not found";
+}
+console.log(findValue(obj1, 2));
