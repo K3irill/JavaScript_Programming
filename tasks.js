@@ -369,11 +369,11 @@
 // console.log(cloneUser3);
 
 //7
-const numsObj = {
-    one: 100,
-    two: 200,
-    title: null,
-};
+// const numsObj = {
+//     one: 100,
+//     two: 200,
+//     title: null,
+// };
 
 // function increaseValues(obj) {
 //     for (let key in obj) {
@@ -398,24 +398,154 @@ const numsObj = {
 
 //9
 
-function mergeObjects(obj1, obj2) {
-    return { ...obj1, ...obj2 };
-}
+// function mergeObjects(obj1, obj2) {
+//     return { ...obj1, ...obj2 };
+// }
 
-const obj1 = { a: 2, b: 2 };
-const obj2 = { b: 3, c: 4 };
-console.log(mergeObjects(obj1, obj2));
+// const obj1 = { a: 2, b: 2 };
+// const obj2 = { b: 3, c: 4 };
+// console.log(mergeObjects(obj1, obj2));
+
+// //10
+
+// function findValue(obj, value) {
+//     let result = [];
+//     for (let key in obj) {
+//         if (obj[key] === value) {
+//             result.push(key);
+//         }
+//     }
+
+//     return result.length ? result : "Value not found";
+// }
+// console.log(findValue(obj1, 2));
+
+// arrays
+
+//1
+
+// function filterEvenNumbers(arr) {
+//     return arr.filter((num) => num % 2 === 0);
+// }
+
+const ARRAY_NUMBERS = [29, 45, 25, 56, 87, 12, 90, 31, 56, 73, 6];
+// console.log(filterEvenNumbers(ARRAY_NUMBERS));
+//addition of adjacent numbers
+// let result = [];
+// for (let i = 0, j = 1; i < ARRAY_NUMBERS.length; i += 2, j += 2) {
+//     if (ARRAY_NUMBERS[j] !== undefined) {
+//         result.push(ARRAY_NUMBERS[i] + ARRAY_NUMBERS[j]);
+//     } else {
+//         result.push(ARRAY_NUMBERS[i]);
+//     }
+// }
+//chain addition
+// let result2 = [];
+// for (let i = 0, j = 1; i < ARRAY_NUMBERS.length; i++, j++) {
+//     if (ARRAY_NUMBERS[j] !== undefined) {
+//         result2.push(ARRAY_NUMBERS[i] + ARRAY_NUMBERS[j]);
+//     } else {
+//         result2.push(ARRAY_NUMBERS[i]);
+//     }
+// }
+// console.log(result2);
+
+//2
+
+// function toUpperCaseString(arr) {
+//     return arr.map((str) => str.toUpperCase());
+// }
+
+const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
+// console.log(toUpperCaseString(ARRAY_STRINGS));
+
+//3
+
+// function sumArray(arr) {
+//     return arr.reduce((sum, num) => sum + num, 0);
+// }
+// console.log(sumArray(ARRAY_NUMBERS));
+
+//4
+
+// function concatArrays(...arr) {
+//     return arr.reduce((acc, arr) => acc.concat(arr), []);
+// }
+// console.log(concatArrays(ARRAY_NUMBERS, ARRAY_STRINGS));
+
+//5
+
+// function countUnique(arr) {
+//     return new Set(arr).size;
+// }
+// console.log(countUnique(ARRAY_NUMBERS));
+
+//6
+
+// function findLongestWord(arr) {
+//     let max = 0;
+//     arr.map((str) => {
+//         if (str.length > max) {
+//             max = str.length;
+//         }
+//     });
+//     return arr.filter((str) => str.length >= max);
+//     //or
+//     return arr.reduce(
+//         (longest, str) => (str.length > longest.length ? str : longest),
+//         ""
+//     );
+// }
+// console.log(findLongestWord(ARRAY_STRINGS));
+
+//7
+
+// function groupBySign(arr) {
+//     const rsObj = {
+//         positive: [],
+//         negative: [],
+//     };
+//     arr.forEach((num) =>
+//         num > 0
+//      ? rsObj["positive"].push(num)
+//      : rsObj["negative"].push(num)
+//     );
+//     return rsObj;
+// }
+// console.log(groupBySign(ARRAY_NUMBERS));
+
+//8
+
+// function frequencyCounter(arr) {
+//     const rsObj = {};
+//     for (const item of arr) {
+//         rsObj[item] = rsObj[item] ? rsObj[item] + 1 : 1;
+//         //or
+//         // rsObj[item] = (rsObj[item] || 0) + 1;
+//     }
+//     return rsObj;
+// }
+// console.log(frequencyCounter(ARRAY_STRINGS));
+
+//9
+
+// function isPalindromeArray(arr) {
+//     return arr.filter((str) => str === str.split("").reverse().join(""));
+// }
+// console.log(isPalindromeArray(ARRAY_STRINGS));
 
 //10
+const arrOne = ["apple", "grapes", "lemon"];
+const arrTwo = [2, 1, 3];
 
-function findValue(obj, value) {
-    let result = [];
-    for (let key in obj) {
-        if (obj[key] === value) {
-            result.push(key);
-        }
+function zipArrays(arr1, arr2) {
+    return arr1.map((key, index)=> ({[key]: arr2[index]}) )
+    //or
+    const rsObject = {};
+    for (let i = 0; i < arr1.length; i++) {
+        rsObject[arr1[i]] = arr2[i];
     }
 
-    return result.length ? result : "Value not found";
+    return rsObject;
 }
-console.log(findValue(obj1, 2));
+console.log(zipArrays(arrOne, arrTwo));
