@@ -535,17 +535,71 @@ const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
 // console.log(isPalindromeArray(ARRAY_STRINGS));
 
 //10
-const arrOne = ["apple", "grapes", "lemon"];
-const arrTwo = [2, 1, 3];
+// const arrOne = ["apple", "grapes", "lemon"];
+// const arrTwo = [2, 1, 3];
 
-function zipArrays(arr1, arr2) {
-    return arr1.map((key, index)=> ({[key]: arr2[index]}) )
-    //or
-    const rsObject = {};
-    for (let i = 0; i < arr1.length; i++) {
-        rsObject[arr1[i]] = arr2[i];
-    }
+// function zipArrays(arr1, arr2) {
+//     return arr1.map((key, index)=> ({[key]: arr2[index]}) )
+//     //or
+//     const rsObject = {};
+//     for (let i = 0; i < arr1.length; i++) {
+//         rsObject[arr1[i]] = arr2[i];
+//     }
 
-    return rsObject;
+//     return rsObject;
+// }
+// console.log(zipArrays(arrOne, arrTwo));
+
+//Destructive assignment
+
+//1
+// const user = {
+//     name: "John",
+//     age: 30,
+//     email: "john@example.com",
+// };
+
+// let { name, email } = user;
+// console.log(name, email);
+
+//2
+
+// const numbers = [10, 20, 30, 40, 50];
+
+// const [firstEl, , thirdEl] = numbers;
+
+//3
+
+// const person = {
+//     firstName: "Alice",
+//     lastName: "Smith",
+// };
+
+// const { name, surname } = person;
+
+//4
+
+// const product = {
+//     id: 1,
+//     details: {
+//         name: "Laptop",
+//         price: 1200,
+//     },
+// };
+
+// const {
+//     details: { name, price },
+// } = product;
+// console.log(name + " " + price);
+
+//5
+
+function getUser() {
+    return {
+        name: "Bob",
+        age: 25,
+    };
 }
-console.log(zipArrays(arrOne, arrTwo));
+
+const { name, age, location = "unknown" } = getUser();
+console.log(`${name} ${age} ${location}`);
