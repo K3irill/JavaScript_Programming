@@ -775,12 +775,71 @@ const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
 
 //3
 
-function reverseString(str){
-    if(str === ''){
-        return ''
-    }else{
-        return  str[str.length - 1] + reverseString(str.slice(0, -1) )
-    }
-    
+// function reverseString(str) {
+//     if (str === "") {
+//         return "";
+//     } else {
+//         return str[str.length - 1] + reverseString(str.slice(0, -1));
+//     }
+// }
+// console.log(reverseString("hello"));
+
+//Promises
+
+//1
+// function fetchData(url) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (url.includes('error')) {
+//                 reject("Request failed");
+//             } else {
+//                 resolve({
+//                     id: 1,
+//                     name: "Product 1",
+//                     price: 100,
+//                 });
+//             }
+//         }, 2000);
+//     });
+// }
+
+// fetchData("https://api.com/product")
+//     .then((data) => console.log(data))
+//     .catch((error) => console.log(error));
+
+//2
+
+function task1() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Task 1 completed");
+        }, Math.random() * 2000 + 1000);
+    });
 }
-console.log(reverseString("hello"));
+
+function task2() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Task 2 completed");
+        }, Math.random() * 2000 + 1000);
+    });
+}
+
+function task3() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Task 3 completed");
+        }, Math.random() * 2000 + 1000);
+    });
+}
+
+task1()
+    .then((result) => {
+        console.log(result);
+        return task2();
+    })
+    .then((result) => {
+        console.log(result);
+        return task3();
+    })
+    .then((result) => console.log(result));
