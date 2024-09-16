@@ -660,20 +660,92 @@ const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
 
 //4
 
-let jsonOne = `{
-  "firstName": "Emily",
-  "lastName": "Clark",
-  "age": 29
-}
-`;
-let jsonTwo = `{
-  "email": "emily.clark@example.com",
-  "phone": "123-456-7890"
-}
-`;
+// let jsonOne = `{
+//   "firstName": "Emily",
+//   "lastName": "Clark",
+//   "age": 29
+// }
+// `;
+// let jsonTwo = `{
+//   "email": "emily.clark@example.com",
+//   "phone": "123-456-7890"
+// }
+// `;
 
-let objOne = JSON.parse(jsonOne);
-let objTwo = JSON.parse(jsonTwo);
+// let objOne = JSON.parse(jsonOne);
+// let objTwo = JSON.parse(jsonTwo);
 
-let mergeObj = JSON.stringify({ ...objOne, ...objTwo }); //or use Object.assign(objOne, objTwo)
-console.log(mergeObj);
+// let mergeObj = JSON.stringify({ ...objOne, ...objTwo }); //or use Object.assign(objOne, objTwo)
+// console.log(mergeObj);
+
+//Map and Set
+
+//1
+
+// let studentsInfo = new Map();
+// studentsInfo.set(101, "John Doe");
+// studentsInfo.set(102, "Kane Smith");
+// studentsInfo.set(103, "Alice Johnson");
+
+// const studentName = studentsInfo.get(102);
+
+// console.log(studentName);
+
+//2
+
+// let countryInfo = new Map([
+//     ["US", "United States"],
+//     ["FR", "France"],
+//     ["IN", "India"],
+//     ["JP", "Japan"],
+// ]);
+
+// countryInfo.forEach((countryName, countryCode) => {
+//     console.log(`${countryCode}: ${countryName}`);
+//   });
+
+// // for (const code of countryInfo.values()) {
+// //     console.log(code);
+// // }
+
+//3 Remove Duplicates from an Array Using Set
+
+// const someArr = [1, 2, 3, 4, 4, 5, 5, 6, 7, 8, 8, 9];
+
+// let setStore = [...new Set(someArr)]
+
+// console.log(setStore);
+
+//4 Check for an Element in a Set
+
+// let registeredUser = new Set(["john_doe", "jane_smith", "sam_green"]);
+// console.log(registeredUser);
+
+// function register(username) {
+//     if (registeredUser.has(username)) {
+//         return `User "${username}" already exists in the Set.`;
+//     } else {
+//         registeredUser.add(username);
+//         return `User "${username}" has been successfully added.`;
+//     }
+// }
+// console.log(register("kail_rich"));
+// console.log(register("kail_rich"));
+
+//5
+
+let setA = new Set([1, 2, 3, 4]);
+let setB = new Set([3, 4, 5, 6]);
+
+//Union
+
+const unionSet = new Set([...setA, ...setB]);
+console.log("Union:", [...unionSet]);
+
+//intersection
+const intersectionSet = new Set([...setA].filter((num) => setB.has(num)));
+console.log('Intersection:', [...intersectionSet]);
+
+//difference
+const differenceSet = new Set([...setA].filter(num => !setB.has(num)));
+console.log('Difference:', [...differenceSet]);
