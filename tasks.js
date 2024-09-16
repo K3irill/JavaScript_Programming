@@ -734,18 +734,53 @@ const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
 
 //5
 
-let setA = new Set([1, 2, 3, 4]);
-let setB = new Set([3, 4, 5, 6]);
+// let setA = new Set([1, 2, 3, 4]);
+// let setB = new Set([3, 4, 5, 6]);
 
-//Union
+// //Union
 
-const unionSet = new Set([...setA, ...setB]);
-console.log("Union:", [...unionSet]);
+// const unionSet = new Set([...setA, ...setB]);
+// console.log("Union:", [...unionSet]);
 
-//intersection
-const intersectionSet = new Set([...setA].filter((num) => setB.has(num)));
-console.log('Intersection:', [...intersectionSet]);
+// //intersection
+// const intersectionSet = new Set([...setA].filter((num) => setB.has(num)));
+// console.log("Intersection:", [...intersectionSet]);
 
-//difference
-const differenceSet = new Set([...setA].filter(num => !setB.has(num)));
-console.log('Difference:', [...differenceSet]);
+// //difference
+// const differenceSet = new Set([...setA].filter((num) => !setB.has(num)));
+// console.log("Difference:", [...differenceSet]);
+
+//recursion
+
+//1  Calculate Factorial Using Recursion
+// function factorial(a) {
+//     if (a === 0 || a === 1) {
+//         return a;
+//     } else {
+//         return a * factorial(a - 1);
+//     }
+// }
+// console.log(factorial(5));
+
+//2 Sum of Array Elements Using Recursion
+
+// function sum(arr) {
+//     if (arr.length === 0) {
+//         return 0;
+//     } else {
+//         return arr[0] + sum(arr.slice(1));
+//     }
+// }
+// console.log(sum([1, 2, 3, 4, 5]));
+
+//3
+
+function reverseString(str){
+    if(str === ''){
+        return ''
+    }else{
+        return  str[str.length - 1] + reverseString(str.slice(0, -1) )
+    }
+    
+}
+console.log(reverseString("hello"));
