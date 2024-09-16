@@ -594,12 +594,86 @@ const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
 
 //5
 
-function getUser() {
-    return {
-        name: "Bob",
-        age: 25,
-    };
-}
+// function getUser() {
+//     return {
+//         name: "Bob",
+//         age: 25,
+//     };
+// }
 
-const { name, age, location = "unknown" } = getUser();
-console.log(`${name} ${age} ${location}`);
+// const { name, age, location = "unknown" } = getUser();
+// console.log(`${name} ${age} ${location}`);
+
+//JSON conversion
+
+//1
+// let userJson = {
+//     users: [
+//         { id: 1, name: "John Doe", age: 28, email: "john.doe@example.com" },
+//         { id: 2, name: "Jane Smith", age: 32, email: "jane.smith@example.com" },
+//         { id: 3, name: "Sam Green", age: 22, email: "sam.green@example.com" },
+//     ],
+// };
+
+// let data = JSON.parse(userJson);
+
+// data.users.forEach((user) => {
+//     console.log(`Name: ${user.name}, Email: ${user.email}`);
+// });
+
+//2
+
+// const productJson = `{
+//     "products": [
+//     {"id": 1, "name": "Laptop", "price": 900, "category": "Electronics"},
+//     {"id": 2, "name": "Book", "price": 20, "category": "Education"},
+//     {"id": 3, "name": "Smartphone", "price": 600, "category": "Electronics"},
+//     {"id": 4, "name": "Pen", "price": 3, "category": "Stationery"},
+//     {"id": 5, "name": "Headphones", "price": 150, "category": "Electronics"}
+//   ]
+// }`;
+
+// let dataProducts = JSON.parse(productJson);
+
+// const electronicsProduct = dataProducts.products.filter(
+//     (product) => product.category === "Electronics" && product.price > 100
+// );
+// console.log(electronicsProduct);
+
+//3
+
+// let studentsJson = `{
+//   "name": "Alice",
+//   "age": 21,
+//   "grades": {"math": 85, "science": 90, "english": 88},
+//   "address": "123 Main St, New York"
+// }
+// `;
+
+// let studentsObj = JSON.parse(studentsJson);
+
+// studentsObj["address"] = "Wall Street";
+// studentsObj["graduationYear"] = 2025;
+
+// const updatedStudentJson = JSON.stringify(studentsObj);
+// console.log(updatedStudentJson);
+
+//4
+
+let jsonOne = `{
+  "firstName": "Emily",
+  "lastName": "Clark",
+  "age": 29
+}
+`;
+let jsonTwo = `{
+  "email": "emily.clark@example.com",
+  "phone": "123-456-7890"
+}
+`;
+
+let objOne = JSON.parse(jsonOne);
+let objTwo = JSON.parse(jsonTwo);
+
+let mergeObj = JSON.stringify({ ...objOne, ...objTwo }); //or use Object.assign(objOne, objTwo)
+console.log(mergeObj);
