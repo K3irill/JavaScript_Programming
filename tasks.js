@@ -809,37 +809,87 @@ const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
 
 //2
 
-function task1() {
+// function task1() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Task 1 completed");
+//         }, Math.random() * 2000 + 1000);
+//     });
+// }
+
+// function task2() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Task 2 completed");
+//         }, Math.random() * 2000 + 1000);
+//     });
+// }
+
+// function task3() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Task 3 completed");
+//         }, Math.random() * 2000 + 1000);
+//     });
+// }
+
+// task1()
+//     .then((result) => {
+//         console.log(result);
+//         return task2();
+//     })
+//     .then((result) => {
+//         console.log(result);
+//         return task3();
+//     })
+//     .then((result) => console.log(result));
+
+//3
+
+function fetchUsers() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("Task 1 completed");
-        }, Math.random() * 2000 + 1000);
+            const users = [
+                { id: 1, name: "John", age: 22 },
+                { id: 2, name: "Alice", age: 17 },
+                { id: 3, name: "Bob", age: 30 },
+            ];
+            resolve(users);
+        }, 1000);
     });
 }
 
-function task2() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("Task 2 completed");
-        }, Math.random() * 2000 + 1000);
+function filterAdultUsers(users) {
+    return new Promise((resolve) => {
+        const adultUsers = users.filter((user) => user.age >= 18);
+        resolve(adultUsers);
     });
 }
 
-function task3() {
+function saveUsers(users) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("Task 3 completed");
-        }, Math.random() * 2000 + 1000);
+            console.log(
+                "Отфильтрованные пользователи сохранены на сервере:",
+                users
+            );
+            resolve("Данные успешно сохранены!");
+        }, 1000);
     });
 }
 
-task1()
-    .then((result) => {
-        console.log(result);
-        return task2();
+fetchUsers()
+    .then((users) => {
+        console.log("Полученные пользователи:", users);
+        return filterAdultUsers(users);
     })
-    .then((result) => {
-        console.log(result);
-        return task3();
+    .then((adultUsers) => {
+        console.log("Отфильтрованные пользователи:", adultUsers);
+        return saveUsers(adultUsers);
     })
-    .then((result) => console.log(result));
+    .then((message) => {
+        console.log(message);
+    })
+    .catch((error) => {
+        console.error("Произошла ошибка:", error);
+    });
