@@ -846,50 +846,96 @@ const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
 
 //3
 
-function fetchUsers() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const users = [
-                { id: 1, name: "John", age: 22 },
-                { id: 2, name: "Alice", age: 17 },
-                { id: 3, name: "Bob", age: 30 },
-            ];
-            resolve(users);
-        }, 1000);
-    });
+// function fetchUsers() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const users = [
+//                 { id: 1, name: "John", age: 22 },
+//                 { id: 2, name: "Alice", age: 17 },
+//                 { id: 3, name: "Bob", age: 30 },
+//             ];
+//             resolve(users);
+//         }, 1000);
+//     });
+// }
+
+// function filterAdultUsers(users) {
+//     return new Promise((resolve) => {
+//         const adultUsers = users.filter((user) => user.age >= 18);
+//         resolve(adultUsers);
+//     });
+// }
+
+// function saveUsers(users) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log(
+//                 "Отфильтрованные пользователи сохранены на сервере:",
+//                 users
+//             );
+//             resolve("Данные успешно сохранены!");
+//         }, 1000);
+//     });
+// }
+
+// fetchUsers()
+//     .then((users) => {
+//         console.log("Полученные пользователи:", users);
+//         return filterAdultUsers(users);
+//     })
+//     .then((adultUsers) => {
+//         console.log("Отфильтрованные пользователи:", adultUsers);
+//         return saveUsers(adultUsers);
+//     })
+//     .then((message) => {
+//         console.log(message);
+//     })
+//     .catch((error) => {
+//         console.error("Произошла ошибка:", error);
+//     });
+
+//codewars
+
+//1
+
+function sumArray(array) {
+    if (!Array.isArray(array) || array.length <= 2) {
+        return 0;
+    }
+
+    const min = Math.min(...array);
+    const max = Math.max(...array);
+
+    let result = 0;
+
+    for (let num of array) {
+        result += num;
+    }
+
+    return result - min - max;
 }
 
-function filterAdultUsers(users) {
-    return new Promise((resolve) => {
-        const adultUsers = users.filter((user) => user.age >= 18);
-        resolve(adultUsers);
-    });
+console.log(sumArray([0, 1, 6, 10, 10]));
+
+//or
+sumArray = (a) =>
+    a
+        ? a
+              .sort((x, y) => x - y)
+              .slice(1, -1)
+              .reduce((s, e) => s + e, 0)
+        : 0;
+//or
+function sumArray(array) {
+    return Array.isArray(array) && array.length > 1
+        ? array.reduce((s, n) => s + n, 0) -
+              Math.min(...array) -
+              Math.max(...array)
+        : 0;
 }
 
-function saveUsers(users) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log(
-                "Отфильтрованные пользователи сохранены на сервере:",
-                users
-            );
-            resolve("Данные успешно сохранены!");
-        }, 1000);
-    });
-}
+//2
 
-fetchUsers()
-    .then((users) => {
-        console.log("Полученные пользователи:", users);
-        return filterAdultUsers(users);
-    })
-    .then((adultUsers) => {
-        console.log("Отфильтрованные пользователи:", adultUsers);
-        return saveUsers(adultUsers);
-    })
-    .then((message) => {
-        console.log(message);
-    })
-    .catch((error) => {
-        console.error("Произошла ошибка:", error);
-    });
+var isSquare = function (n) {
+    return Number.isInteger(Math.sqrt(n));
+};
