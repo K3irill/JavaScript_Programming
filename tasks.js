@@ -939,3 +939,9 @@ function sumArray(array) {
 var isSquare = function (n) {
     return Number.isInteger(Math.sqrt(n));
 };
+
+//3 Do I get a bonus?
+
+function bonusTime(salary, bonus) {
+    return bonus ? `£${salary * 10}` : `£${salary }`
+  }
