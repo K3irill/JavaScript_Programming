@@ -977,6 +977,7 @@ const sheepArr = [
 function countSheeps(arr) {
     return arr.filter((sheep) => sheep).length;
 
+    //or
     // let result = 0;
     // for (const sheep of arr) {
     //     sheep ? result++ : 0;
@@ -985,3 +986,20 @@ function countSheeps(arr) {
 }
 
 console.log(countSheeps(sheepArr));
+
+//5
+
+var summation = function (num) {
+    return num * (num + 1) / 2
+
+    //or
+    let result = 0;
+    for (let i = 1; i <= num; i++) {
+        result += i;
+    }
+    return result;
+};
+
+console.log(summation(8));
+
+
