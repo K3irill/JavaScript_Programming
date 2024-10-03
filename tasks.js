@@ -898,50 +898,90 @@ const ARRAY_STRINGS = ["header", "aside", "main", "footer", "header", "rar"];
 
 //1
 
-function sumArray(array) {
-    if (!Array.isArray(array) || array.length <= 2) {
-        return 0;
-    }
+// function sumArray(array) {
+//     if (!Array.isArray(array) || array.length <= 2) {
+//         return 0;
+//     }
 
-    const min = Math.min(...array);
-    const max = Math.max(...array);
+//     const min = Math.min(...array);
+//     const max = Math.max(...array);
 
-    let result = 0;
+//     let result = 0;
 
-    for (let num of array) {
-        result += num;
-    }
+//     for (let num of array) {
+//         result += num;
+//     }
 
-    return result - min - max;
-}
+//     return result - min - max;
+// }
 
-console.log(sumArray([0, 1, 6, 10, 10]));
+// console.log(sumArray([0, 1, 6, 10, 10]));
 
 //or
-sumArray = (a) =>
-    a
-        ? a
-              .sort((x, y) => x - y)
-              .slice(1, -1)
-              .reduce((s, e) => s + e, 0)
-        : 0;
+// sumArray = (a) =>
+//     a
+//         ? a
+//               .sort((x, y) => x - y)
+//               .slice(1, -1)
+//               .reduce((s, e) => s + e, 0)
+//         : 0;
 //or
-function sumArray(array) {
-    return Array.isArray(array) && array.length > 1
-        ? array.reduce((s, n) => s + n, 0) -
-              Math.min(...array) -
-              Math.max(...array)
-        : 0;
-}
+// function sumArray(array) {
+//     return Array.isArray(array) && array.length > 1
+//         ? array.reduce((s, n) => s + n, 0) -
+//               Math.min(...array) -
+//               Math.max(...array)
+//         : 0;
+// }
 
 //2
 
-var isSquare = function (n) {
-    return Number.isInteger(Math.sqrt(n));
-};
+// var isSquare = function (n) {
+//     return Number.isInteger(Math.sqrt(n));
+// };
 
 //3 Do I get a bonus?
 
-function bonusTime(salary, bonus) {
-    return bonus ? `£${salary * 10}` : `£${salary }`
-  }
+// function bonusTime(salary, bonus) {
+//     return bonus ? `£${salary * 10}` : `£${salary}`;
+// }
+
+// 4 counting sheep
+const sheepArr = [
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+];
+
+function countSheeps(arr) {
+    return arr.filter((sheep) => sheep).length;
+
+    // let result = 0;
+    // for (const sheep of arr) {
+    //     sheep ? result++ : 0;
+    // }
+    // return result;
+}
+
+console.log(countSheeps(sheepArr));
