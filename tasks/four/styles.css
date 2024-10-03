@@ -1,0 +1,25 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: #383636;
+    overflow: hidden;
+}
+
+.field {
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid blue;
+    height: calc(100% - 20px);
+}
+
+button {
+    white-space: nowrap;
+    padding: 10px 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+}
