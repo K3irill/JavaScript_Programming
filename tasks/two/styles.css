@@ -1,0 +1,45 @@
+p {
+    font-size: 22px;
+    font-family: sans-serif;
+    margin: 25px 15px;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    margin: 0 15px;
+  }
+  
+  .accordion {
+    margin: 25px 15px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .header {
+    width: 100%;
+    text-align: left;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    background: cyan;
+    padding: 5px 10px;
+  }
+  
+  .panel {
+    padding: 5px 10px 10px;
+    background: lightblue;
+    font-size: 14px;
+    display: none;
+    /* max-height: 0;
+    visibility: hidden; */
+  }
+  
+  .panel--opened {
+    display: block;
+  }
