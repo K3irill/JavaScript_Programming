@@ -1092,7 +1092,38 @@ function sortStudents(arr) {
         }
     });
 
-    return result
+    return result;
 }
 
 console.log(sortStudents(students));
+
+//4
+
+function countEverySecond(n) {
+    let i = 1;
+    const intervalId = setInterval(() => {
+        console.log(i);
+        if (i >= n) {
+            clearInterval(intervalId);
+        }
+        i++;
+    }, 1000);
+}
+// countEverySecond(10);
+
+//5
+
+const countEverySecond2 = (n) => {
+    let i = 1;
+    const count = () => {
+        console.log(i);
+        if (i >= n) {
+            return;
+        }
+        i++;
+        setTimeout(count, 1000);
+    };
+    count();
+};
+
+countEverySecond2(10);
