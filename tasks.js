@@ -1040,12 +1040,59 @@ var str = "How can mirrors be real if our eyes aren't real";
 
 String.prototype.toJadenCase = function () {
     const arr = this.split("");
-    for ( let i = 0; i < arr.length; i++){
-        if(i === 0 || arr[i - 1] === ' '){
-            arr[i] = arr[i].toUpperCase()
+    for (let i = 0; i < arr.length; i++) {
+        if (i === 0 || arr[i - 1] === " ") {
+            arr[i] = arr[i].toUpperCase();
         }
     }
-    return arr.join('')
+    return arr.join("");
 };
 
 console.log(str.toJadenCase());
+
+//1
+
+const fruits = ["kiwi", "apple", "kiwi", "orange", "apple", "kiwi"];
+
+function countFruits(arr) {
+    let obj = {};
+    for (let item of arr) {
+        obj[item] = obj[item] ? obj[item] + 1 : 1;
+    }
+    return obj;
+}
+
+console.log(countFruits(fruits));
+
+//2
+
+const uniqueSet = new Set(fruits);
+const uniqueArr = [];
+for (let value of uniqueSet) {
+    uniqueArr.push(value);
+}
+console.log(uniqueArr);
+
+//3
+
+const students = [
+    { name: "alex", age: 20 },
+    { name: "mike", age: 24 },
+    { name: "masha", age: 20 },
+    { name: "stas", age: 18 },
+];
+
+function sortStudents(arr) {
+    const result = {};
+    arr.forEach((student) => {
+        if (!result[student.age]) {
+            result[student.age] = [student];
+        } else {
+            result[student.age].push(student);
+        }
+    });
+
+    return result
+}
+
+console.log(sortStudents(students));
