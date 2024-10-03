@@ -1025,11 +1025,27 @@ console.log(invert([1, 2, 3, 4, -5]));
 
 function disemvowel(str) {
     const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-    return str.split("").filter((letter) => !vowels.includes(letter)).join('');
+    return str
+        .split("")
+        .filter((letter) => !vowels.includes(letter))
+        .join("");
     //or
-    return str.replace(/[aeiou]/gi, '');
+    return str.replace(/[aeiou]/gi, "");
 }
 
 console.log(disemvowel("This website is for losers LOL!")); // "Ths wbst s fr lsrs LL!"
 
 //2
+var str = "How can mirrors be real if our eyes aren't real";
+
+String.prototype.toJadenCase = function () {
+    const arr = this.split("");
+    for ( let i = 0; i < arr.length; i++){
+        if(i === 0 || arr[i - 1] === ' '){
+            arr[i] = arr[i].toUpperCase()
+        }
+    }
+    return arr.join('')
+};
+
+console.log(str.toJadenCase());
