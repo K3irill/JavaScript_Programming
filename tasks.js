@@ -1010,3 +1010,12 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
 
 console.log(zeroFuel(100, 50, 1));
 
+//7
+
+function invert(array) {
+    return array.map((num) => num * -1);
+    //or
+    return array.map((num) => -num);
+}
+
+console.log(invert([1, 2, 3, 4, -5]));
