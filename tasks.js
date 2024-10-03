@@ -1019,3 +1019,17 @@ function invert(array) {
 }
 
 console.log(invert([1, 2, 3, 4, -5]));
+
+//7 ku
+//1
+
+function disemvowel(str) {
+    const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    return str.split("").filter((letter) => !vowels.includes(letter)).join('');
+    //or
+    return str.replace(/[aeiou]/gi, '');
+}
+
+console.log(disemvowel("This website is for losers LOL!")); // "Ths wbst s fr lsrs LL!"
+
+//2
