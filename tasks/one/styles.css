@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #302f2f;
+}
+button{
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    background-color: antiquewhite;
+    border: none;
+    width: 250px;
+}
+button:disabled{
+    cursor:not-allowed;
+}
