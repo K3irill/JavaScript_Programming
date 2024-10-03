@@ -990,7 +990,7 @@ console.log(countSheeps(sheepArr));
 //5
 
 var summation = function (num) {
-    return num * (num + 1) / 2
+    return (num * (num + 1)) / 2;
 
     //or
     let result = 0;
@@ -1002,4 +1002,11 @@ var summation = function (num) {
 
 console.log(summation(8));
 
+//6
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+    return (mpg * fuelLeft) / distanceToPump >= 1 ? true : false;
+};
+
+console.log(zeroFuel(100, 50, 1));
 
