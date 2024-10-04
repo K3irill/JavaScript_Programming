@@ -985,7 +985,7 @@ function countSheeps(arr) {
     // return result;
 }
 
-console.log(countSheeps(sheepArr));
+// console.log(countSheeps(sheepArr));
 
 //5
 
@@ -1000,7 +1000,7 @@ var summation = function (num) {
     return result;
 };
 
-console.log(summation(8));
+// console.log(summation(8));
 
 //6
 
@@ -1008,7 +1008,7 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
     return (mpg * fuelLeft) / distanceToPump >= 1 ? true : false;
 };
 
-console.log(zeroFuel(100, 50, 1));
+// console.log(zeroFuel(100, 50, 1));
 
 //7
 
@@ -1018,7 +1018,7 @@ function invert(array) {
     return array.map((num) => -num);
 }
 
-console.log(invert([1, 2, 3, 4, -5]));
+// console.log(invert([1, 2, 3, 4, -5]));
 
 //7 ku
 //1
@@ -1033,7 +1033,7 @@ function disemvowel(str) {
     return str.replace(/[aeiou]/gi, "");
 }
 
-console.log(disemvowel("This website is for losers LOL!")); // "Ths wbst s fr lsrs LL!"
+// console.log(disemvowel("This website is for losers LOL!")); // "Ths wbst s fr lsrs LL!"
 
 //2
 var str = "How can mirrors be real if our eyes aren't real";
@@ -1048,7 +1048,7 @@ String.prototype.toJadenCase = function () {
     return arr.join("");
 };
 
-console.log(str.toJadenCase());
+// console.log(str.toJadenCase());
 
 //1
 
@@ -1062,7 +1062,7 @@ function countFruits(arr) {
     return obj;
 }
 
-console.log(countFruits(fruits));
+// console.log(countFruits(fruits));
 
 //2
 
@@ -1071,7 +1071,7 @@ const uniqueArr = [];
 for (let value of uniqueSet) {
     uniqueArr.push(value);
 }
-console.log(uniqueArr);
+// console.log(uniqueArr);
 
 //3
 
@@ -1095,7 +1095,7 @@ function sortStudents(arr) {
     return result;
 }
 
-console.log(sortStudents(students));
+// console.log(sortStudents(students));
 
 //4
 
@@ -1126,4 +1126,30 @@ const countEverySecond2 = (n) => {
     count();
 };
 
-countEverySecond2(10);
+// countEverySecond2(10);
+
+//
+function range(min, max) {
+    let range = {
+        from: min,
+        to: max,
+
+        [Symbol.iterator]() {
+            this.current = this.from;
+            return this;
+        },
+
+        next() {
+            if (this.current <= this.to) {
+                return { done: false, value: this.current++ };
+            } else {
+                return { done: true };
+            }
+        },
+    };
+    return range;
+}
+
+for (let i of range(0, 5)) {
+    console.log(i); // Должен напечатать от 0 до 5
+}
