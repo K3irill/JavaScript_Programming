@@ -32,7 +32,6 @@ let task = new Task("ES6", false);
 
 console.log(task.isCompleted, task._isCompleted);
 
-
 class Media {
     constructor(title) {
         this._title = title;
@@ -119,3 +118,49 @@ speed.toggleCheckOutStatus();
 console.log(speed.isCheckedOut);
 speed.addRating(1, 1, 5);
 console.log(speed.getAverageRating);
+
+class Creature {
+    constructor(name) {
+        this.name = name;
+    }
+    born() {
+        console.log(`${this.name} родился`);
+    }
+}
+
+class Animal extends Creature {
+    constructor(name, maxAge) {
+        super(name);
+        this.maxAge = maxAge;
+    }
+}
+
+class Human extends Animal {
+    constructor(name, maxAge, height) {
+        super(name, maxAge);
+        this.height = height;
+        this.inventions = [];
+    }
+}
+
+class Bird extends Animal {
+    speed(kph) {
+        console.log(`${this.name} летит со скоростью ${kph}`);
+    }
+}
+
+class Fish extends Animal {
+    swim(distance) {
+        console.log(`Рыба ${this.name} проплывает ${distance} метров!`);
+    }
+}
+
+class Chinese extends Human {
+    talk() {
+        console.log(`Я, ${this.name}, я люблю кушать рис!`);
+    }
+}
+
+const ying = new Chinese("Ying", 72, 167);
+ying.born();
+ying.talk();
