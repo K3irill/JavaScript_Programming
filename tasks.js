@@ -3,6 +3,18 @@
 //     return typeof value;
 // }
 
+const {
+    split,
+    map,
+    join,
+    trim,
+    prototype,
+    isArray,
+    valueOf,
+    every,
+    ceil,
+} = require("lodash");
+
 // console.log(checkDataType(42));
 // console.log(checkDataType("Hello"));
 // console.log(checkDataType([1, 2, 3]));
@@ -1151,5 +1163,88 @@ function range(min, max) {
 }
 
 for (let i of range(0, 5)) {
-    console.log(i); // Должен напечатать от 0 до 5
+    console.log(i);
 }
+function squareDigits(num) {
+    return Number(
+        num
+            .toString()
+            .split("")
+            .map((num) => num ** 2)
+            .join("")
+    );
+}
+console.log(typeof squareDigits(3212));
+
+function noSpace(x) {
+    return x
+        .split("")
+        .filter((item) => item !== " ")
+        .map((item) => item)
+        .join("");
+}
+
+console.log(noSpace(" 8 j 8   mBliB8g  imjB8B8  jl  B "));
+
+function isIsogram(str) {
+    str = str.toLowerCase();
+
+    for (let i = 0; i < str.length; i++) {
+        console.log(str.indexOf(str[i]) + "-" + str.lastIndexOf(str[i]));
+
+        if (str.indexOf(str[i]) !== str.lastIndexOf(str[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isIsogram("Dermatoglyphicss"));
+
+Boolean.prototype.toString = function () {
+    return this.valueOf() ? "true" : "false";
+};
+
+Number.prototype.toString = function () {
+    return String(this.valueOf());
+};
+
+Array.prototype.toString = function () {
+    if (this.every((item) => typeof item === "number")) {
+        return `[${this.join(", ")}]`;
+    }
+    throw new TypeError("Array can only contain numbers.");
+};
+
+console.log(true.toString());
+console.log(false.toString());
+
+//
+// function whatCentury(year) {
+//     const century = Math.ceil(year / 100);
+//     return century;
+// }
+// console.log(whatCentury(2001));
+
+function whatCentury(year) {
+    const century = Math.ceil(year / 100);
+
+    let suffix = "th";
+
+    if (century % 100 >= 11 && century % 100 <= 13) {
+        suffix = "th";
+    } else {
+        switch (century % 10) {
+            case 1:
+                suffix = "st";
+                break;
+            case 2:
+                suffix = "nd";
+                break;
+            case 3:
+                suffix = "rd";
+                break;
+        }
+    }
+    return century + suffix;
+}
+console.log(whatCentury(1300));
