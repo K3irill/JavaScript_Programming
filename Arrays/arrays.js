@@ -90,3 +90,58 @@ for (let el of ARR_THINGS) {
 ARR_THINGS.forEach((el) => {
     console.log(`forEach: ${el}`);
 });
+
+const items = ["item1", "item2", "item3"];
+const copy = items.map((element) => element);
+
+console.log(copy);
+
+const fruits = [
+    "blueberry",
+    "apple",
+    "mango",
+    "perl",
+    "blueberry",
+    "apple",
+    "mango",
+    "strawberry",
+    "blueberry",
+];
+
+const fruitsObj = fruits.reduce((acc, cur) => {
+    if (acc[cur]) {
+        acc[cur] += 1;
+    } else {
+        acc[cur] = 1;
+    }
+    return acc;
+}, {});
+
+console.log(fruitsObj);
+console.log(Math.round((1.08 * 100_000) / 60 / 60));
+
+let matrixSpot = [
+    ["o", "o", "o", "o", "o", "o", "o", "o"],
+    ["o", "o", "o", "o", "o", "o", "o", "o"],
+    ["o", "o", "o", "o", "o", "o", "o", "o"],
+    ["o", "o", "o", "o", "o", "o", "x", "o"],
+    ["o", "o", "o", "o", "o", "o", "x", "o"],
+    ["o", "o", "o", "o", "o", "o", "o", "o"],
+];
+
+function xMarksTheSpot(matrix) {
+    let coords = [];
+    for (let x = 0; x < matrix.length; x++) {
+        for (let y = 0; y < matrix[x].length; y++) {
+            if (matrix[x][y] === "x") {
+                coords.push(x, y);
+            }
+        }
+    }
+    if (coords.length !== 2) {
+        return [];
+    }
+    return coords;
+}
+
+console.log(xMarksTheSpot(matrixSpot));

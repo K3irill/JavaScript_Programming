@@ -50,3 +50,32 @@ user.greetWaitAndAgain();
 
 // Hello, Alex!
 // Hello again, Alex!
+//---------------------|
+const a = {
+        prop: 1,
+        f: function (a, b) {
+            var that = this;
+            function func() {
+                console.log(that.prop + a + b);
+            }
+            func();
+        },
+    },
+    b = {
+        prop: 2,
+        f: function (a, b) {
+            console.log(this.prop + a + b);
+        },
+    };
+//
+a.f.apply(b, [1, 1]);
+b.f.call(a, 2, 2);
+//
+const newFuncA = a.f.bind(b, 1, 1);
+newFuncA();
+const newFuncB = b.f.bind(a, 2, 2);
+newFuncB();
+
+//
+
+setTimeout(a.f.bind(a, 1, 1), 1000);
