@@ -1174,7 +1174,7 @@ function squareDigits(num) {
             .join("")
     );
 }
-console.log(typeof squareDigits(3212));
+// console.log(typeof squareDigits(3212));
 
 function noSpace(x) {
     return x
@@ -1184,7 +1184,7 @@ function noSpace(x) {
         .join("");
 }
 
-console.log(noSpace(" 8 j 8   mBliB8g  imjB8B8  jl  B "));
+// console.log(noSpace(" 8 j 8   mBliB8g  imjB8B8  jl  B "));
 
 function isIsogram(str) {
     str = str.toLowerCase();
@@ -1198,7 +1198,7 @@ function isIsogram(str) {
     }
     return true;
 }
-console.log(isIsogram("Dermatoglyphicss"));
+// console.log(isIsogram("Dermatoglyphicss"));
 
 Boolean.prototype.toString = function () {
     return this.valueOf() ? "true" : "false";
@@ -1215,8 +1215,8 @@ Array.prototype.toString = function () {
     throw new TypeError("Array can only contain numbers.");
 };
 
-console.log(true.toString());
-console.log(false.toString());
+// console.log(true.toString());
+// console.log(false.toString());
 
 //
 // function whatCentury(year) {
@@ -1247,4 +1247,34 @@ function whatCentury(year) {
     }
     return century + suffix;
 }
-console.log(whatCentury(1300));
+// console.log(whatCentury(1300));
+//
+
+function a(num) {
+    return num
+        .map((n) => n ** 2)
+        .reduce((a, b) => {
+            a + b;
+        });
+}
+console.log(a([1, 2, 3]));
+
+function a(num) {
+    return num.map((n) => n ** 2).reduce((a, b) => a + b, 0);
+}
+console.log(a([]));
+
+function getDivisorsCnt(n) {
+    if (n == 1) return 1;
+    let result = [1, n];
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) {
+            result.push(i);
+            if (i != Math.floor(n / i)) {
+                result.push(Math.floor(n / i));
+            }
+        }
+    }
+    return result.length;
+}
+console.log(getDivisorsCnt(25));
