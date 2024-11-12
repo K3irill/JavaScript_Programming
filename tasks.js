@@ -1278,3 +1278,28 @@ function getDivisorsCnt(n) {
     return result.length;
 }
 console.log(getDivisorsCnt(25));
+function countBy(x, n) {
+    n = x * n;
+    const z = [];
+    for (let i = x; i <= n; i += x) {
+        z.push(i);
+    }
+    return z;
+}
+
+function validatePIN(pin) {
+    if (pin.length !== 4 && pin.length !== 6) {
+        return false;
+    }
+    const isNumeric = /^\d+$/.test(pin);
+    return isNumeric;
+}
+console.log(validatePIN("123 "));
+
+function removeChar(str) {
+    const result = str.split("");
+    result.shift();
+    result.pop();
+    return result.join("");
+}
+console.log(removeChar("hkko"));
