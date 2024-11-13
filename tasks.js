@@ -1303,3 +1303,45 @@ function removeChar(str) {
     return result.join("");
 }
 console.log(removeChar("hkko"));
+function solution(string) {
+    return string
+        .split("")
+        .map((el) => {
+            if (el === el.toUpperCase()) {
+                return (el = " " + el);
+            }
+            return el;
+        })
+        .join("");
+}
+
+console.log(solution("camelCaseTwoThree"));
+
+function alphabetPosition(text) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    return [...text]
+        .map((el) => alphabet.indexOf(el.toLowerCase()) + 1)
+        .filter((el) => el !== 0);
+}
+
+console.log(alphabetPosition("a Hello World!"));
+
+function wave(str) {
+    const clearSpaces = [...str].filter((el) => el !== " ");
+    const length = clearSpaces.length;
+    const arr = [];
+    for (let i = 0; i < length; i++) {
+        arr.push(str);
+    }
+
+    return arr
+        .map((word, wordIndex) =>
+            [...word]
+                .map((letter, letterIndex) =>
+                    wordIndex === letterIndex ? letter.toUpperCase() : letter
+                )
+                .join("")
+        )
+        .join(" ");
+}
+console.log(wave("hello hi"));
