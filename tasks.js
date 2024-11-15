@@ -1345,3 +1345,36 @@ function wave(str) {
         .join(" ");
 }
 console.log(wave("hello hi"));
+
+//task create function-polifil promiseAll
+
+async function promiseAll(promises) {
+    const result = [];
+
+    try {
+        for (let index = 0; index < promises.length; index++) {
+            try {
+                const response = await promises[index];
+                if (!response.ok) {
+                    throw new Error("Network response failed!");
+                }
+                const data = await response.json();
+                result.push(data);
+            } catch (error) {
+                console.error(
+                    `Error processing promise at index ${index}:`,
+                    error.message
+                );
+            }
+        }
+    } catch (error) {
+        console.error("Error in promiseAll:", error.message);
+        return "error";
+    }
+    return result;
+}
+
+async () => {
+    const result = promiseAll([p1, p2, p3]);
+    console.log(result);
+};
