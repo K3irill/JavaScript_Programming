@@ -1378,3 +1378,64 @@ async () => {
     const result = promiseAll([p1, p2, p3]);
     console.log(result);
 };
+const arr_1 = [1, 2, 4, 5, 8];
+const arr_2 = [2, 3, 4, 8, 10];
+const arr_3 = [4, 8, 9, 10, 15];
+
+const findCommonElements = (arr1, arr2, arr3) => {
+    const result = [];
+    let i = 0,
+        j = 0,
+        k = 0;
+
+    while (i < arr1.length && j < arr2.length && k < arr3.length) {
+        if (arr1[i] === arr2[j] && arr1[i] === arr3[k]) {
+            result.push(arr1[i]);
+            i++;
+            j++;
+            k++;
+        } else if (arr1[i] < arr2[j]) {
+            i++;
+        } else if (arr2[j] < arr3[k]) {
+            j++;
+        } else {
+            k++;
+        }
+    }
+
+    return result;
+};
+
+console.log(findCommonElements(arr_1, arr_2, arr_3));
+
+//task func-polifil
+
+const arr = [1, 2, 3, 4, 5];
+
+const reverseArray = (arr) => {
+    const result = [];
+    for (let index = arr.length - 1; index >= 0; index--) {
+        result.push(arr[index]);
+    }
+    return result;
+};
+
+console.log(reverseArray(arr)); // [5, 4, 3, 2, 1]
+
+const str = "aabccDEff";
+
+const findDuplicates = (str) => {
+    const obj = {};
+    const resultObj = {};
+    for (let item of str.toLowerCase()) {
+        obj[item] = obj[item] ? (obj[item] += 1) : 1;
+    }
+    for (let item in obj) {
+        if (obj[item] > 1) {
+            resultObj[item] = obj[item];
+        }
+    }
+    return resultObj;
+};
+
+console.log(findDuplicates(str)); // { a: 2, c: 2, f: 2 }
